@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+/*
+ * Bweyogerere design tokens.
+ * The school palette is three colours only: navy, gold and warm white.
+ * Every other tone below is a tint or shade of those three.
+ * Change colours here, never with one-off hex values in components.
+ */
+:root {
+  /* Core palette */
+  --navy: #1b2a4a;
+  --gold: #d4a843;
+  --warm-white: #faf8f5;
+
+  /* Shades and tints of the core palette */
+  --navy-deep: #131f38; /* deeper navy: footer base, overlays */
+  --navy-soft: #2b3f66; /* lighter navy: placeholder art */
+  --gold-deep: #b8892a; /* gold hover / pressed state */
+  --gold-tint: #f4ead0; /* soft gold highlight */
+  --soft-grey: #f5f3ef; /* alternate section background */
+  --line: #e3ddd2; /* warm grey hairline (warm white shade) */
+  --ink-muted: #4a5571; /* secondary text (navy tint), 7:1 on warm white */
+
+  /* shadcn-style semantic tokens, mapped to the school palette */
+  --background: var(--warm-white);
+  --foreground: var(--navy);
+  --card: var(--warm-white);
+  --card-foreground: var(--navy);
+  --primary: var(--gold);
+  --primary-foreground: var(--navy);
+  --secondary: var(--navy);
+  --secondary-foreground: var(--warm-white);
+  --muted: var(--soft-grey);
+  --muted-foreground: var(--ink-muted);
+  --accent: var(--gold-tint);
+  --accent-foreground: var(--navy);
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--gold);
+
+  /* Softer than shadcn's default: friendlier corners */
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy-soft: var(--navy-soft);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-gold-tint: var(--gold-tint);
+  --color-warm-white: var(--warm-white);
+  --color-soft-grey: var(--soft-grey);
+  --color-ink-muted: var(--ink-muted);
+  --color-line: var(--line);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 12px);
+
+  --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-hand: var(--font-caveat), "Segoe Script", cursive;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-size: 1.0625rem; /* 17px body text, never below 16px */
+    line-height: 1.7;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif text-balance;
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+  }
+
+  /* Visible keyboard focus: gold ring, framed by a navy hairline so it
+     stays visible against the warm white page as well as on navy. */
+  :focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 6px var(--navy);
+    border-radius: 0.5rem;
+  }
+
+  ::selection {
+    background: var(--gold);
+    color: var(--navy);
+  }
+}
+
+@layer components {
+  /* Soft film grain for placeholder imagery (no stock photography). */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.16;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
