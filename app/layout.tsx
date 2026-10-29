@@ -6,6 +6,7 @@ import { SkipLink } from "@/components/site/skip-link";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { StickyActionBar } from "@/components/site/sticky-action-bar";
+import { PublicFrame } from "@/components/site/public-frame";
 import { SCHOOL } from "@/lib/site";
 
 /* Fonts are self-hosted (no third-party request) and subset to Latin. */
@@ -64,13 +65,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="flex min-h-full flex-col bg-background pb-24 md:pb-0">
         <MotionProvider>
-          <SkipLink />
-          <SiteHeader />
-          <main id="main" className="flex-1 outline-none" tabIndex={-1}>
+          <PublicFrame
+            skip={<SkipLink />}
+            header={<SiteHeader />}
+            footer={<SiteFooter />}
+            sticky={<StickyActionBar />}
+          >
             {children}
-          </main>
-          <SiteFooter />
-          <StickyActionBar />
+          </PublicFrame>
         </MotionProvider>
       </body>
     </html>

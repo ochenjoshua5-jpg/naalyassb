@@ -11,8 +11,10 @@ import { syntheticEnquiry, uniqueTestIp, type SyntheticEnquiry } from "./support
  * All data is synthetic. Every record created here is deleted in afterEach.
  */
 
+// Day 5 added contactedAt: null for new enquiries (a timestamp set on the first staff reply, which
+// drives the 24-hour response-time figure). It holds no personal data and is always null here.
 const EXPECTED_KEYS = [
-  "consentGiven", "consentNoticeVersion", "createdAt", "desiredLevel", "email", "id", "learnerAge",
+  "consentGiven", "consentNoticeVersion", "contactedAt", "createdAt", "desiredLevel", "email", "id", "learnerAge",
   "parentName", "phone", "preferredIntake", "question", "reference", "source", "status",
 ].sort();
 

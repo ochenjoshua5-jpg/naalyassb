@@ -165,3 +165,31 @@
     animation: none;
   }
 }
+
+/* Staff command palette (cmdk). Kept here so the public site styles stay unchanged. */
+.palette-group [cmdk-group-heading] {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.palette-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  color: var(--navy);
+  cursor: pointer;
+}
+.palette-item[data-selected="true"] {
+  background: var(--gold-tint);
+  outline: 2px solid var(--gold);
+}
+.palette-item[data-disabled="true"] {
+  cursor: not-allowed;
+}

@@ -12,29 +12,28 @@ const db = new PGlite();
 const results = [];
 const check = (name, ok, detail = "") => results.push({ name, ok, detail });
 
-// Minimal Supabase-like environment: roles, auth schema, auth.uid(), and Supabase's default grants.
+// Minimal Supabase-like environment: roles, auth schema, auth.jwt() (Clerk subject), and Supabase's default grants.
 await db.exec(`
   create role anon nologin;
   create role authenticated nologin;
   create role service_role nologin bypassrls;
   create schema auth;
-  create table auth.users (id uuid primary key);
-  create function auth.uid() returns uuid language sql stable as $$
-    select nullif(current_setting('request.jwt.claim.sub', true), '')::uuid
+  create function auth.jwt() returns jsonb language sql stable as $$
+    select jsonb_build_object('sub', nullif(current_setting('request.jwt.claim.sub', true), ''))
   $$;
   grant usage on schema public, auth to anon, authenticated, service_role;
-  grant execute on function auth.uid() to anon, authenticated, service_role;
+  grant execute on function auth.jwt() to anon, authenticated, service_role;
   alter default privileges in schema public grant all on tables to anon, authenticated, service_role;
   alter default privileges in schema public grant execute on functions to anon, authenticated, service_role;
 `);
 await db.exec(migration);
 
-const ADMISSIONS = "11111111-1111-1111-1111-111111111111";
-const ADMIN = "22222222-2222-2222-2222-222222222222";
-const INACTIVE = "33333333-3333-3333-3333-333333333333";
-const NON_STAFF = "44444444-4444-4444-4444-444444444444";
+// Synthetic Clerk-style user ids (user_ followed by letters and digits).
+const ADMISSIONS = "user_verifyAdmissions1";
+const ADMIN = "user_verifyAdmin1";
+const INACTIVE = "user_verifyInactive1";
+const NON_STAFF = "user_verifyNonStaff1";
 await db.exec(`
-  insert into auth.users (id) values ('${ADMISSIONS}'), ('${ADMIN}'), ('${INACTIVE}'), ('${NON_STAFF}');
   insert into public.staff_profiles (user_id, role, full_name, active) values
     ('${ADMISSIONS}', 'admissions', 'Test Admissions', true),
     ('${ADMIN}', 'admin', 'Test Admin', true),
@@ -83,7 +82,7 @@ const anonSelect = await as("anon", null, "select * from public.enquiries");
 check("anon cannot select enquiries", !!anonSelect.error && /permission denied/.test(anonSelect.error), anonSelect.error ?? JSON.stringify(anonSelect.rows));
 const anonInsert = await as("anon", null, insertSql(row("CCCC3333")));
 check("anon cannot insert directly", !!anonInsert.error && /permission denied/.test(anonInsert.error), anonInsert.error ?? "inserted!");
-const anonUpdate = await as("anon", null, "update public.enquiries set status = 'closed'");
+const anonUpdate = await as("anon", null, "update public.enquiries set status = 'withdrawn'");
 check("anon cannot update", !!anonUpdate.error && /permission denied/.test(anonUpdate.error), anonUpdate.error ?? "updated!");
 const anonStaffFn = await as("anon", null, "select public.is_enquiry_staff(array['admin'])");
 check("anon cannot call is_enquiry_staff", !!anonStaffFn.error && /permission denied/.test(anonStaffFn.error), anonStaffFn.error ?? "callable!");
@@ -101,17 +100,25 @@ const adm = await as("authenticated", ADMISSIONS, "select count(*)::int as n fro
 check("admissions staff can read enquiries", adm.rows?.[0]?.n === 2, adm.error ?? JSON.stringify(adm.rows));
 const adminRead = await as("authenticated", ADMIN, "select count(*)::int as n from public.enquiries");
 check("admin staff can read enquiries", adminRead.rows?.[0]?.n === 2, adminRead.error ?? JSON.stringify(adminRead.rows));
-const admUpdateStatus = await as("authenticated", ADMISSIONS, "update public.enquiries set status = 'contacted', handled_at = now(), handled_by = '" + ADMISSIONS + "' where reference = 'ENQ-20261029-AAAA1111' returning status");
+const admUpdateStatus = await as("authenticated", ADMISSIONS, "update public.enquiries set status = 'contacted', contacted_at = now(), handled_at = now(), handled_by = '" + ADMISSIONS + "' where reference = 'ENQ-20261029-AAAA1111' returning status");
 check("admissions staff can update status and handling fields", admUpdateStatus.rows?.[0]?.status === "contacted", admUpdateStatus.error ?? JSON.stringify(admUpdateStatus.rows));
 const admEditParent = await as("authenticated", ADMISSIONS, "update public.enquiries set parent_name = 'Changed' where reference = 'ENQ-20261029-AAAA1111'");
 check("staff cannot edit what the parent wrote (column grant)", !!admEditParent.error && /permission denied/.test(admEditParent.error), admEditParent.error ?? "edited!");
-const admDelete = await as("authenticated", ADMIN, "delete from public.enquiries");
-check("staff cannot delete enquiries through the API", !!admDelete.error && /permission denied/.test(admDelete.error), admDelete.error ?? "deleted!");
+const admDelete = await as("authenticated", ADMISSIONS, "delete from public.enquiries returning id");
+const afterAdmDelete = await as("authenticated", ADMIN, "select count(*)::int as n from public.enquiries");
+check("admissions cannot delete (RLS removes zero rows, no error)", !admDelete.error && (admDelete.rows ?? []).length === 0 && afterAdmDelete.rows?.[0]?.n === 2, admDelete.error ?? `rows deleted: ${admDelete.rows?.length}, remaining: ${afterAdmDelete.rows?.[0]?.n}`);
+const anonDelete = await as("anon", null, "delete from public.enquiries");
+check("anon cannot delete", !!anonDelete.error && /permission denied/.test(anonDelete.error), anonDelete.error ?? "deleted!");
+const admDeleteOne = await as("authenticated", ADMIN, "delete from public.enquiries where reference = 'ENQ-20261029-AAAA1111' returning id");
+check("admin (Headmaster role) can delete an enquiry", (admDeleteOne.rows ?? []).length === 1, admDeleteOne.error ?? `rows: ${admDeleteOne.rows?.length}`);
+await db.exec(`insert into public.enquiries (reference, parent_name, phone, desired_level, learner_age, preferred_intake, consent_given, consent_notice_version, source) values ('ENQ-20261029-AAAA1111', 'Nakato Grace', '+256772123456', 'O-Level', 15, 'not-sure', true, 'draft-2026-10-29', 'test')`);
 const admInsert = await as("authenticated", ADMIN, insertSql(row("DDDD4444")));
 check("staff cannot insert directly through the API", !!admInsert.error && /permission denied/.test(admInsert.error), admInsert.error ?? "inserted!");
-const inactiveUpdate = await as("authenticated", INACTIVE, "update public.enquiries set status = 'closed'");
-const closedNow = await db.query("select count(*)::int as n from public.enquiries where status = 'closed'");
-check("inactive staff update changes nothing (RLS filters the row)", !inactiveUpdate.error && closedNow.rows[0].n === 0, inactiveUpdate.error ?? `closed rows: ${closedNow.rows[0].n}`);
+const inactiveUpdate = await as("authenticated", INACTIVE, "update public.enquiries set status = 'withdrawn'");
+const withdrawnNow = await db.query("select count(*)::int as n from public.enquiries where status = 'withdrawn'");
+check("inactive staff update changes nothing (RLS filters the row)", !inactiveUpdate.error && withdrawnNow.rows[0].n === 0, inactiveUpdate.error ?? `withdrawn rows: ${withdrawnNow.rows[0].n}`);
+const badHandler = await as("authenticated", ADMISSIONS, "update public.enquiries set handled_by = 'someone-else' where reference = 'ENQ-20261029-AAAA1111'");
+check("handled_by must be a Clerk user id", !!badHandler.error && /violates check constraint/.test(badHandler.error), badHandler.error ?? "accepted!");
 const ownProfile = await as("authenticated", ADMISSIONS, "select user_id from public.staff_profiles");
 check("staff see only their own profile row", ownProfile.rows?.length === 1 && ownProfile.rows[0].user_id === ADMISSIONS, ownProfile.error ?? JSON.stringify(ownProfile.rows));
 
@@ -127,6 +134,7 @@ const bad = {
   "source unknown": { source: "partner" },
   "question over 500": { question: "x".repeat(501) },
   "status unknown": { status: "archived" },
+  "status closed (old value)": { status: "closed" },
 };
 let i = 0;
 for (const [label, patch] of Object.entries(bad)) {
