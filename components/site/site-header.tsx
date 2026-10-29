@@ -2,20 +2,25 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { Crest } from "@/components/brand/crest";
-import { useActiveSection, useScrolled } from "@/lib/hooks";
+import { useScrolled } from "@/lib/hooks";
 import { NAV_ITEMS, SCHOOL } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-const NAV_IDS = NAV_ITEMS.map((item) => item.id);
+/** A nav item is current when the pathname is that page or one of its sub-pages. */
+function isCurrent(pathname: string | null, href: string) {
+  if (!pathname) return false;
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 export function SiteHeader() {
   const scrolled = useScrolled(16);
-  const active = useActiveSection(NAV_IDS);
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -35,14 +40,14 @@ export function SiteHeader() {
         </Link>
 
         {/* Desktop navigation */}
-        <nav aria-label="Main" className="hidden lg:block">
+        <nav aria-label="Main" className="hidden xl:block">
           <ul className="flex items-center gap-1">
             {NAV_ITEMS.map((item) => {
-              const isActive = active === item.id;
+              const isActive = isCurrent(pathname, item.href);
               return (
-                <li key={item.id}>
+                <li key={item.href}>
                   <Link
-                    href={`#${item.id}`}
+                    href={item.href}
                     aria-current={isActive ? "location" : undefined}
                     className={cn(
                       "relative block rounded-lg px-3 py-2 text-[0.95rem] font-medium transition-colors",
@@ -80,7 +85,7 @@ export function SiteHeader() {
           {/* Mobile and tablet menu */}
           <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="onDark" size="icon" className="lg:hidden" aria-label="Open menu">
+              <Button variant="onDark" size="icon" className="xl:hidden" aria-label="Open menu">
                 <Menu aria-hidden />
               </Button>
             </SheetTrigger>
@@ -97,12 +102,12 @@ export function SiteHeader() {
                 <nav aria-label="Mobile" className="mt-10">
                   <ul className="flex flex-col">
                     {NAV_ITEMS.map((item) => {
-                      const isActive = active === item.id;
+                      const isActive = isCurrent(pathname, item.href);
                       return (
-                        <li key={item.id} className="border-b border-warm-white/10 last:border-b-0">
+                        <li key={item.href} className="border-b border-warm-white/10 last:border-b-0">
                           <SheetClose asChild>
                             <Link
-                              href={`#${item.id}`}
+                              href={item.href}
                               aria-current={isActive ? "location" : undefined}
                               className={cn(
                                 "flex min-h-14 items-center justify-between py-3 font-serif text-3xl font-semibold tracking-tight transition-colors",

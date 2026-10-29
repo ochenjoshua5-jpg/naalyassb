@@ -31,8 +31,8 @@ export function SiteFooter() {
           </h2>
           <ul className="mt-4 grid grid-cols-2 gap-x-6 md:grid-cols-1">
             {NAV_ITEMS.map((item) => (
-              <li key={item.id}>
-                <Link href={`#${item.id}`} className={linkClass}>
+              <li key={item.href}>
+                <Link href={item.href} className={linkClass}>
                   {item.label}
                 </Link>
               </li>
@@ -82,7 +82,12 @@ export function SiteFooter() {
 
       <div className="mx-auto mt-14 flex max-w-6xl flex-col gap-3 border-t border-warm-white/15 px-5 pt-6 text-sm text-warm-white/70 md:flex-row md:items-center md:justify-between">
         <p>© 2026 {SCHOOL.name}, {SCHOOL.campus}.</p>
-        <p>Preview for school review. Privacy notice being prepared with the school.</p>
+        <p className="flex flex-wrap gap-x-5 gap-y-2">
+          <span>Preview for school review.</span>
+          <Link href="/privacy" className="rounded-sm underline decoration-gold decoration-2 underline-offset-4 hover:text-gold">
+            Privacy notice (draft for school review)
+          </Link>
+        </p>
       </div>
     </footer>
   );
