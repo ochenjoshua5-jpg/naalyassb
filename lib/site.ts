@@ -29,12 +29,14 @@ export const SCHOOL = {
   email: null as string | null,
 } as const;
 
+/** Primary navigation. Each entry is a real page on this site. */
 export const NAV_ITEMS = [
-  { id: "welcome", label: "Welcome" },
-  { id: "programmes", label: "Programmes" },
-  { id: "news", label: "News" },
-  { id: "admissions", label: "Admissions" },
-  { id: "contact", label: "Contact" },
+  { href: "/about", label: "About" },
+  { href: "/academics", label: "Academics" },
+  { href: "/school-life", label: "School life" },
+  { href: "/news", label: "News" },
+  { href: "/admissions", label: "Admissions" },
+  { href: "/contact", label: "Contact" },
 ] as const;
 
 /** Wording taken from the school's published campus and admissions pages. */
@@ -140,6 +142,6 @@ export const COPY = {
     eyebrow: "Visit & contact",
     title: "Talk to us about your child’s next step.",
     body:
-      "Reach the campus through the enquiry form on the school website, or follow the school on social media for updates.",
+      "Make an enquiry on the school’s admissions page, or follow the school on X for updates. Campus phone and email details are pending school confirmation.",
   },
 } as const;

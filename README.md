@@ -28,6 +28,9 @@ npm run lint
 - `components/sections/` — homepage sections in order: hero, welcome, programmes, news, admissions, visit.
 - `components/site/` — header, mobile menu, footer, sticky action bar.
 - `docs/DESIGN.md` — design decisions, accessibility notes, required approved images, and the feedback list for the school.
+- `lib/content.ts` — structured content for the public pages (timeline, values, subjects, daily routine, FAQ, news and gallery models). Every item carries its approval status; anything unconfirmed is shown as "Pending HM Approval".
+- `app/about`, `app/academics`, `app/school-life`, `app/news`, `app/admissions`, `app/contact`, `app/privacy` — the content pages.
+- `docs/CONTENT-REVIEW.md` — fact-check register: every public statement, its source, its status and the questions for the school.
 
 ## Before going live
 
