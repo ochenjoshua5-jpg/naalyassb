@@ -122,6 +122,7 @@ export async function POST(request: Request) {
     consentGiven: true,
     consentNoticeVersion: PRIVACY_NOTICE_VERSION,
     status: "new",
+    contactedAt: null,
     source: isEnquiryTestMode(mode) ? "test" : "website",
     createdAt: now.toISOString(),
   };
