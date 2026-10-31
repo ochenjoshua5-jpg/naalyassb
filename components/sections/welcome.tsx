@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { RealImage } from "@/components/brand/real-image";
+import { PhotoPlaceholder } from "@/components/brand/photo-placeholder";
 import { Reveal } from "@/components/motion/reveal";
 import { COPY, SCHOOL } from "@/lib/site";
 
@@ -29,11 +29,10 @@ export function Welcome() {
         </Reveal>
 
         <Reveal className="md:col-span-5 md:mt-28">
-          <RealImage
-            src="/images/hm.jpg"
-            alt="Portrait of the headteacher of Naalya Secondary School, Bweyogerere Campus, in a blue suit and tie"
-            className="aspect-[4/5] w-full rotate-[1.5deg] rounded-2xl shadow-xl shadow-navy/15 object-cover object-center"
-            priority
+          <PhotoPlaceholder
+            tone="navy"
+            className="aspect-[4/5] w-full rotate-[1.5deg] rounded-2xl shadow-xl shadow-navy/15"
+            caption="Portrait of the headteacher: to be added with consent"
           />
           <p className="mt-8 font-serif text-2xl leading-snug text-navy">
             <span aria-hidden className="mr-2 text-gold">“</span>

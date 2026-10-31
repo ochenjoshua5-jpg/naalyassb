@@ -3,7 +3,7 @@
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Crest } from "@/components/brand/crest";
-import { RealImage } from "@/components/brand/real-image";
+import { PhotoPlaceholder } from "@/components/brand/photo-placeholder";
 import { MotionLink } from "@/components/motion/motion-link";
 import { COPY, SCHOOL } from "@/lib/site";
 
@@ -56,11 +56,11 @@ export function Hero() {
         </div>
 
         <div className="relative md:col-span-5">
-          <RealImage
-            src="/images/naalya-school-overview.jpg"
-            alt="Wide aerial view of Naalya Secondary School Bweyogerere Campus, showing buildings, green lawns, trees and parking"
-            className="aspect-[4/5] w-full max-w-md rotate-[-1.5deg] rounded-2xl shadow-2xl shadow-navy-deep/40 md:ml-auto md:max-w-none object-cover object-center"
-            priority
+          <PhotoPlaceholder
+            tone="gold"
+            className="aspect-[4/5] w-full max-w-md rotate-[-1.5deg] rounded-2xl shadow-2xl shadow-navy-deep/40 md:ml-auto md:max-w-none"
+            captionPosition="top"
+            caption="Campus photograph: to be added with the school’s permission"
           />
 
           <div className="absolute -bottom-7 left-4 flex items-center gap-4 rounded-xl bg-warm-white p-4 pr-6 text-navy shadow-xl shadow-navy-deep/30 md:-left-10">

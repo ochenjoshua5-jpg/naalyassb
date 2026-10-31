@@ -6,7 +6,6 @@ import { SectionNav } from "@/components/page/section-nav";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Reveal } from "@/components/motion/reveal";
-import { RealImage } from "@/components/brand/real-image";
 import { OLEVEL_SUBJECTS } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -53,21 +52,6 @@ export default function AcademicsPage() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-16 px-5 py-20 md:py-28 lg:grid-cols-[minmax(0,1fr)_14rem] lg:gap-16">
         <div className="min-w-0 space-y-24">
           <SectionNav label="On this page, mobile" items={SECTIONS} className="lg:hidden" />
-
-          {/* Featured classroom image */}
-          <Reveal className="w-full">
-            <div className="rounded-2xl overflow-hidden shadow-xl shadow-navy/15">
-              <RealImage
-                src="/images/class-time.jpg"
-                alt="Students in a classroom at Naalya Secondary School, Bweyogerere Campus, with a teacher at the chalkboard"
-                className="w-full h-[22rem] object-cover object-center md:h-[28rem]"
-                priority
-              />
-              <p className="mt-4 text-sm leading-relaxed text-ink-muted text-center">
-                Active learning in the classroom: teachers guide students through the Uganda National Curriculum.
-              </p>
-            </div>
-          </Reveal>
 
           {/* Levels: tabs keep the page short and let parents switch between levels */}
           <section id="levels" aria-labelledby="levels-title" className="scroll-mt-28">

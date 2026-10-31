@@ -8,7 +8,6 @@ import { PendingNote, PendingTag } from "@/components/page/pending";
 import { SectionNav } from "@/components/page/section-nav";
 import { Timeline } from "@/components/page/timeline";
 import { Reveal } from "@/components/motion/reveal";
-import { RealImage } from "@/components/brand/real-image";
 import { CAMPUS_CHAIR, CAMPUS_TEAM, FACILITIES, TIMELINE, VALUES } from "@/lib/content";
 import { COPY, SCHOOL } from "@/lib/site";
 
@@ -159,15 +158,15 @@ export default function AboutPage() {
 
             <Reveal className="mt-10">
               <div className="flex flex-col gap-6 rounded-2xl bg-card p-6 shadow-sm shadow-navy/5 sm:flex-row sm:items-center sm:p-8">
-                <RealImage
-                  src="/images/hm.jpg"
-                  alt="Portrait of the headteacher of Naalya Secondary School, Bweyogerere Campus"
-                  className="shrink-0 size-24 rounded-full object-cover object-center"
-                  priority
-                />
+                <div className="grid size-20 shrink-0 place-items-center overflow-hidden rounded-full bg-navy font-serif text-3xl font-semibold text-gold" aria-hidden>
+                  OD
+                </div>
                 <div>
                   <p className="font-hand text-4xl leading-none text-navy">{SCHOOL.headteacher.name}</p>
                   <p className="mt-2 text-base text-ink-muted">{SCHOOL.headteacher.title}</p>
+                  <p className="mt-3 text-sm text-ink-muted">
+                    Portrait to be added with the headteacher’s consent.
+                  </p>
                 </div>
               </div>
             </Reveal>
@@ -198,29 +197,16 @@ export default function AboutPage() {
 
           {/* Chapter 5: campus */}
           <section id="campus" aria-labelledby="campus-title" className="mt-24 scroll-mt-28">
-            <div className="flex flex-col lg:flex-row gap-8 items-start">
-              <Reveal className="lg:w-1/2">
-                <RealImage
-                  src="/images/naalya-school-overview.jpg"
-                  alt="Wide aerial view of Naalya Secondary School Bweyogerere Campus showing buildings, green lawns, trees and parking"
-                  className="w-full rounded-2xl shadow-xl shadow-navy/15 object-cover object-center aspect-video"
-                  priority
-                />
-                <p className="mt-4 text-sm leading-relaxed text-ink-muted">
-                  Bweyogerere Campus — day and boarding education in Kira Town Council, Wakiso District.
-                </p>
-              </Reveal>
-              <Reveal className="lg:w-1/2 min-w-0">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-ink-muted">Chapter five</p>
-                <h2 id="campus-title" className="mt-4 font-serif text-4xl font-semibold tracking-[-0.025em] text-navy sm:text-5xl">
-                  The campus
-                </h2>
-                <p className="mt-6 max-w-2xl text-lg leading-[1.75] text-ink-muted">
-                  Modern facilities alongside a balanced approach to academics and activities. Students can be day or
-                  boarding students.
-                </p>
-              </Reveal>
-            </div>
+            <Reveal>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-ink-muted">Chapter five</p>
+              <h2 id="campus-title" className="mt-4 font-serif text-4xl font-semibold tracking-[-0.025em] text-navy sm:text-5xl">
+                The campus
+              </h2>
+              <p className="mt-6 max-w-2xl text-lg leading-[1.75] text-ink-muted">
+                Modern facilities alongside a balanced approach to academics and activities. Students can be day or
+                boarding students.
+              </p>
+            </Reveal>
             <ul className="mt-12 grid gap-6 sm:grid-cols-2">
               {FACILITIES.map((facility, index) => (
                 <Reveal as="li" key={facility.title}>
