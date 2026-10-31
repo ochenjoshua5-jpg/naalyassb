@@ -34,7 +34,7 @@ export default function EnquiryPage() {
       >
         <Link
           href="/admissions"
-          className="inline-flex items-center gap-2 rounded-sm text-base font-semibold text-warm-white underline decoration-gold decoration-2 underline-offset-[6px] hover:text-gold"
+          className="inline-flex min-h-11 items-center gap-2 rounded-sm text-base font-semibold text-warm-white underline decoration-gold decoration-2 underline-offset-[6px] hover:text-gold"
         >
           Back to admissions
         </Link>

@@ -100,12 +100,12 @@ export default function ContactPage() {
               </CardContent>
             </Card>
           </Reveal>
-          <Reveal delay={0.06}>
+          <Reveal>
             <ContactCard icon={Phone} title="Phone" value={SCHOOL.phone}>
               The campus phone number will appear here once confirmed.
             </ContactCard>
           </Reveal>
-          <Reveal delay={0.12}>
+          <Reveal>
             <ContactCard icon={Mail} title="Email" value={SCHOOL.email}>
               The campus email address will appear here once confirmed.
             </ContactCard>
@@ -115,12 +115,12 @@ export default function ContactPage() {
               Whether the campus uses WhatsApp for enquiries is pending school confirmation.
             </ContactCard>
           </Reveal>
-          <Reveal delay={0.06}>
+          <Reveal>
             <ContactCard icon={Clock} title="Office hours" value={null}>
               Opening hours for the campus office are pending school confirmation.
             </ContactCard>
           </Reveal>
-          <Reveal delay={0.12}>
+          <Reveal>
             <Card className="flex h-full flex-col p-7">
               <CardHeader className="gap-3 p-0">
                 <span className="grid size-12 place-items-center rounded-full bg-gold-tint text-navy">

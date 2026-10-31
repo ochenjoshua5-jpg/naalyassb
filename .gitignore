@@ -45,3 +45,9 @@ next-env.d.ts
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+# generated QA output (large; regenerate with the scripts in package.json / scripts/qa)
+/.lighthouseci/
+/backstop/bitmaps_test/
+/backstop/bitmaps_reference/
+/backstop/html_report/

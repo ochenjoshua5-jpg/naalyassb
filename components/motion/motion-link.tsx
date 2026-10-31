@@ -1,9 +1,7 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Button, type ButtonProps } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-/* Button-styled link with a gentle hover lift and press. */
+/* Button-styled link with a gentle hover lift and press (CSS only; off for reduced motion). */
 export function MotionLink({
   href,
   children,
@@ -19,9 +17,9 @@ export function MotionLink({
 }) {
   return (
     <Button asChild variant={variant} size={size} className={className}>
-      <motion.a href={href} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+      <a href={href} className={cn("btn-lift")}>
         {children}
-      </motion.a>
+      </a>
     </Button>
   );
 }

@@ -28,7 +28,7 @@ export function Welcome() {
           </div>
         </Reveal>
 
-        <Reveal className="md:col-span-5 md:mt-28" delay={0.12}>
+        <Reveal className="md:col-span-5 md:mt-28">
           <PhotoPlaceholder
             tone="navy"
             className="aspect-[4/5] w-full rotate-[1.5deg] rounded-2xl shadow-xl shadow-navy/15"
@@ -55,7 +55,7 @@ export function Welcome() {
             </CardContent>
           </Card>
         </Reveal>
-        <Reveal delay={0.1}>
+        <Reveal>
           <Card className="h-full border-l-4 border-navy">
             <CardHeader>
               <CardTitle className="font-sans text-sm font-semibold uppercase tracking-[0.16em] text-ink-muted">

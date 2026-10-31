@@ -1,0 +1,10 @@
+{
+  "generatedAt": "2026-10-30T10:14:32.666Z",
+  "start": "http://127.0.0.1:3000/",
+  "scope": "internal links only (external excluded)",
+  "linksChecked": 176,
+  "uniqueLinks": 41,
+  "brokenCount": 0,
+  "broken": [],
+  "note": "Fee-structure PDFs and other unapproved documents are not linked anywhere on the site (fees are withheld with a notice)."
+}

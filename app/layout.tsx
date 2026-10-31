@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { MotionProvider } from "@/components/motion/motion-provider";
 import { SkipLink } from "@/components/site/skip-link";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { StickyActionBar } from "@/components/site/sticky-action-bar";
+import { CookieConsentBanner } from "@/components/site/cookie-consent";
 import { PublicFrame } from "@/components/site/public-frame";
 import { SCHOOL } from "@/lib/site";
 
@@ -26,12 +26,15 @@ const inter = localFont({
   preload: true,
 });
 
-/* Handwritten accent, used only for the headteacher's name. Not preloaded. */
+/*
+ * Handwritten accent, used only for the headteacher's name. It is decorative, so it never blocks
+ * text: "optional" uses it only if it arrives almost at once, and it is not preloaded.
+ */
 const caveat = localFont({
   src: "./fonts/Caveat-700.woff2",
   variable: "--font-caveat",
   weight: "700",
-  display: "swap",
+  display: "optional",
   preload: false,
 });
 
@@ -64,16 +67,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${fraunces.variable} ${inter.variable} ${caveat.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-background pb-24 md:pb-0">
-        <MotionProvider>
-          <PublicFrame
-            skip={<SkipLink />}
-            header={<SiteHeader />}
-            footer={<SiteFooter />}
-            sticky={<StickyActionBar />}
-          >
-            {children}
-          </PublicFrame>
-        </MotionProvider>
+        <PublicFrame
+          skip={<SkipLink />}
+          header={<SiteHeader />}
+          footer={<SiteFooter />}
+          sticky={<StickyActionBar />}
+        >
+          {children}
+        </PublicFrame>
+        <CookieConsentBanner />
       </body>
     </html>
   );

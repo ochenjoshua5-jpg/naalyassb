@@ -22,7 +22,7 @@ export function SectionNav({
           <li key={item.id}>
             <a
               href={`#${item.id}`}
-              className="block rounded-lg px-4 py-2 text-[0.95rem] font-medium text-navy transition-colors hover:bg-gold-tint/60 lg:-ml-px lg:rounded-none lg:border-l-2 lg:border-transparent lg:px-4 lg:hover:border-gold lg:hover:bg-transparent lg:hover:text-gold-deep"
+              className="flex min-h-11 items-center rounded-lg px-4 py-2 text-[0.95rem] font-medium text-navy transition-colors hover:bg-gold-tint/60 lg:-ml-px lg:rounded-none lg:border-l-2 lg:border-transparent lg:px-4 lg:hover:border-gold lg:hover:bg-transparent lg:hover:text-gold-deep"
             >
               {item.label}
             </a>

@@ -81,7 +81,7 @@ export function Programmes() {
         <Reveal className="mt-24 grid grid-cols-1 gap-10 border-t border-navy/10 pt-14 md:grid-cols-3 md:gap-8">
           {programmes.learning.map((point, index) => (
             <div key={point.title}>
-              <p aria-hidden className="font-serif text-4xl font-semibold text-navy/30">
+              <p aria-hidden className="font-serif text-4xl font-semibold text-navy/60">
                 0{index + 1}
               </p>
               <h3 className="mt-3 font-serif text-2xl font-semibold text-navy">{point.title}</h3>

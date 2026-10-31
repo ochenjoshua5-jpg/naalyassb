@@ -80,6 +80,19 @@ export default function PrivacyPage() {
             </p>
           </Block>
 
+          <Block id="cookies" title="Cookies">
+            <p>
+              The site sets one essential cookie. It remembers your choice on the cookie banner, so the banner does not
+              keep appearing. Essential cookies cannot be switched off, because the site cannot remember your choice
+              without them.
+            </p>
+            <p>
+              Analytics and marketing are off. The banner starts with both unticked, and no analytics or marketing
+              script is loaded. If the school adds either later, it will load only after you tick that category. To see
+              the banner again, clear this site’s cookies.
+            </p>
+          </Block>
+
           <Block id="photos" title="Photographs of children">
             <p>
               We publish photographs of children only when a parent or guardian has given permission, and that permission

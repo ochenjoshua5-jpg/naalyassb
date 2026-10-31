@@ -1,7 +1,5 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Crest } from "@/components/brand/crest";
@@ -10,11 +8,6 @@ import { MotionLink } from "@/components/motion/motion-link";
 import { COPY, SCHOOL } from "@/lib/site";
 
 export function Hero() {
-  const frameRef = useRef<HTMLDivElement>(null);
-  // Subtle parallax: the photo drifts at most 30px while the visitor scrolls.
-  const { scrollYProgress } = useScroll({ target: frameRef, offset: ["start end", "end start"] });
-  const drift = useTransform(scrollYProgress, [0, 1], [30, -30]);
-
   return (
     <section
       aria-labelledby="hero-title"
@@ -28,12 +21,9 @@ export function Hero() {
       <div aria-hidden className="grain absolute inset-0 -z-10 opacity-60" />
 
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 px-5 pb-28 pt-32 md:grid-cols-12 md:gap-10 md:pb-36 md:pt-44">
-        <motion.div
-          className="md:col-span-7"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
+        {/* Static on purpose: text that starts hidden cannot be painted (or measured as the LCP) until the
+            page's JavaScript runs. The headline and lead are visible from the first paint. */}
+        <div className="md:col-span-7">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gold">{COPY.hero.eyebrow}</p>
 
           <h1
@@ -63,25 +53,16 @@ export function Hero() {
               </li>
             ))}
           </ul>
-        </motion.div>
+        </div>
 
-        <motion.div
-          ref={frameRef}
-          className="relative md:col-span-5"
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
-        >
-          <motion.div style={{ y: drift }}>
-            <PhotoPlaceholder
-              tone="gold"
-              className="aspect-[4/5] w-full max-w-md rotate-[-1.5deg] rounded-2xl shadow-2xl shadow-navy-deep/40 md:ml-auto md:max-w-none"
-              captionPosition="top"
-              caption="Campus photograph: to be added with the school’s permission"
-            />
-          </motion.div>
+        <div className="relative md:col-span-5">
+          <PhotoPlaceholder
+            tone="gold"
+            className="aspect-[4/5] w-full max-w-md rotate-[-1.5deg] rounded-2xl shadow-2xl shadow-navy-deep/40 md:ml-auto md:max-w-none"
+            captionPosition="top"
+            caption="Campus photograph: to be added with the school’s permission"
+          />
 
-          {/* Badge overlapping the photo, breaking the grid on purpose */}
           <div className="absolute -bottom-7 left-4 flex items-center gap-4 rounded-xl bg-warm-white p-4 pr-6 text-navy shadow-xl shadow-navy-deep/30 md:-left-10">
             <Crest className="size-14" tone="navy" title="Naalya Bweyogerere crest (placeholder)" />
             <div className="leading-tight">
@@ -92,7 +73,7 @@ export function Hero() {
               </p>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Curved hand-off into the warm white page */}

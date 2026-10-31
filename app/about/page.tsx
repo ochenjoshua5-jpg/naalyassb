@@ -112,7 +112,7 @@ export default function AboutPage() {
                   </CardContent>
                 </Card>
               </Reveal>
-              <Reveal delay={0.1}>
+              <Reveal>
                 <Card className="h-full border-l-4 border-navy">
                   <CardHeader>
                     <CardTitle className="font-sans text-sm font-semibold uppercase tracking-[0.16em] text-ink-muted">
@@ -138,11 +138,9 @@ export default function AboutPage() {
               </Reveal>
               <dl className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2">
                 {VALUES.map((value, index) => (
-                  <Reveal key={value.title} delay={index * 0.05}>
-                    <div className="border-t-2 border-gold pt-5">
-                      <dt className="font-serif text-2xl font-semibold text-navy">{value.title}</dt>
-                      <dd className="mt-2 text-base leading-[1.7] text-ink-muted">{value.body}</dd>
-                    </div>
+                  <Reveal key={value.title} className="border-t-2 border-gold pt-5">
+                    <dt className="font-serif text-2xl font-semibold text-navy">{value.title}</dt>
+                    <dd className="mt-2 text-base leading-[1.7] text-ink-muted">{value.body}</dd>
                   </Reveal>
                 ))}
               </dl>
@@ -211,11 +209,11 @@ export default function AboutPage() {
             </Reveal>
             <ul className="mt-12 grid gap-6 sm:grid-cols-2">
               {FACILITIES.map((facility, index) => (
-                <Reveal key={facility.title} delay={index * 0.05}>
-                  <li className="h-full rounded-2xl bg-card p-7 shadow-sm shadow-navy/5">
+                <Reveal as="li" key={facility.title}>
+                  <div className="h-full rounded-2xl bg-card p-7 shadow-sm shadow-navy/5">
                     <h3 className="font-serif text-2xl font-semibold text-navy">{facility.title}</h3>
                     <p className="mt-3 text-base leading-[1.7] text-ink-muted">{facility.body}</p>
-                  </li>
+                  </div>
                 </Reveal>
               ))}
             </ul>

@@ -84,7 +84,7 @@ export function SiteFooter() {
         <p>© 2026 {SCHOOL.name}, {SCHOOL.campus}.</p>
         <p className="flex flex-wrap gap-x-5 gap-y-2">
           <span>Preview for school review.</span>
-          <Link href="/privacy" className="rounded-sm underline decoration-gold decoration-2 underline-offset-4 hover:text-gold">
+          <Link href="/privacy" className="inline-flex min-h-11 items-center rounded-sm underline decoration-gold decoration-2 underline-offset-4 hover:text-gold">
             Privacy notice (draft for school review)
           </Link>
         </p>

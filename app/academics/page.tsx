@@ -148,11 +148,11 @@ export default function AcademicsPage() {
                 ["Continuous assessment", "Regular evaluation and feedback that helps learners improve."],
                 ["Experienced teachers", "Educators who are committed to helping each learner reach their academic goals."],
               ].map(([title, body], index) => (
-                <Reveal key={title} delay={index * 0.05}>
-                  <li className="h-full rounded-2xl bg-card p-7 shadow-sm shadow-navy/5">
+                <Reveal as="li" key={title}>
+                  <div className="h-full rounded-2xl bg-card p-7 shadow-sm shadow-navy/5">
                     <h3 className="font-serif text-2xl font-semibold text-navy">{title}</h3>
                     <p className="mt-3 text-base leading-[1.7] text-ink-muted">{body}</p>
-                  </li>
+                  </div>
                 </Reveal>
               ))}
             </ul>
