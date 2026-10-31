@@ -3,7 +3,7 @@ import { ArrowRight, BookOpen, GraduationCap, Trees } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { PhotoPlaceholder } from "@/components/brand/photo-placeholder";
+import { RealImage } from "@/components/brand/real-image";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { COPY, SCHOOL } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -13,6 +13,21 @@ const ICONS = {
   alevel: GraduationCap,
   campus: Trees,
 } as const;
+
+const PROGRAMME_IMAGES: Record<string, { src: string; alt: string }> = {
+  olevel: {
+    src: "/images/class-time.jpg",
+    alt: "Students in a classroom at Naalya Secondary School, Bweyogerere Campus, engaged in a lesson",
+  },
+  alevel: {
+    src: "/images/NAALYA-building.jpg",
+    alt: "Naalya Secondary School multi-storey building with palm trees at Bweyogerere Campus",
+  },
+  campus: {
+    src: "/images/naalya-school-overview.jpg",
+    alt: "Wide aerial view of Naalya Secondary School Bweyogerere Campus with green lawns and buildings",
+  },
+};
 
 export function Programmes() {
   const { programmes } = COPY;
@@ -34,9 +49,10 @@ export function Programmes() {
             return (
               <RevealItem key={item.key} className={cn(index === 1 && "md:mt-20")}>
                 <Card className="flex h-full flex-col overflow-hidden border-l-4 border-gold">
-                  <PhotoPlaceholder
-                    tone={item.key === "alevel" ? "gold" : "navy"}
-                    className="h-44 rounded-none"
+                  <RealImage
+                    src={PROGRAMME_IMAGES[item.key].src}
+                    alt={PROGRAMME_IMAGES[item.key].alt}
+                    className="h-44 w-full rounded-none object-cover object-center"
                   />
                   <CardHeader className="pb-4">
                     <div className="flex items-center justify-between gap-3">
