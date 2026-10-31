@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, CalendarDays } from "lucide-react";
 import { PageHero } from "@/components/page/page-hero";
-import { PendingNote, PendingTag } from "@/components/page/pending";
+import { SectionNav } from "@/components/page/section-nav";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
@@ -23,13 +23,15 @@ export default function NewsPage() {
       <PageHero
         id="news-title"
         eyebrow="News and events"
-        title="Notices and dates from the campus, once they are confirmed."
-        lead="Parents check this page for announcements, term dates and event reminders. We only publish a date after the school has confirmed it."
+        title="Notices and dates from the campus."
+        lead="Parents check this page for announcements, term dates and event reminders. Each item shows a confirmed date and the department that issued it."
       />
 
       <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
         <Reveal>
-          <p className="max-w-2xl text-sm font-semibold uppercase tracking-[0.16em] text-ink-muted">Notice categories</p>
+          <p className="max-w-2xl text-sm font-semibold uppercase tracking-[0.16em] text-ink-muted">
+            Notice categories
+          </p>
           <ul className="mt-4 flex flex-wrap gap-2.5" aria-label="Notice categories">
             {NEWS_CATEGORIES.map((category) => (
               <li key={category}>
@@ -39,9 +41,6 @@ export default function NewsPage() {
               </li>
             ))}
           </ul>
-          <div className="mt-4">
-            <PendingTag />
-          </div>
         </Reveal>
 
         {hasItems ? (
@@ -69,10 +68,12 @@ export default function NewsPage() {
           <Reveal className="mt-14">
             <div className="grid gap-8 rounded-3xl bg-card p-8 shadow-sm shadow-navy/5 md:grid-cols-[minmax(0,1fr)_auto] md:items-center md:p-12">
               <div>
-                <h2 className="font-serif text-3xl font-semibold text-navy md:text-4xl">No notices are published yet</h2>
+                <h2 className="font-serif text-3xl font-semibold text-navy md:text-4xl">
+                  No notices are published yet
+                </h2>
                 <p className="mt-4 max-w-2xl text-base leading-[1.75] text-ink-muted">
-                  Once the school approves a notice, it will appear here with its confirmed date and the department that
-                  issued it. Term dates will be listed on the{" "}
+                  Once the school approves a notice, it will appear here with its confirmed date and the department
+                  that issued it. Term dates will be listed on the{" "}
                   <Link href="/academics#calendar" className="font-semibold text-navy underline decoration-gold decoration-2 underline-offset-4">
                     academics page
                   </Link>{" "}
@@ -91,14 +92,30 @@ export default function NewsPage() {
         )}
 
         <Reveal className="mt-14 grid gap-6 md:grid-cols-2">
-          <PendingNote>
-            <span className="font-semibold text-navy">Who keeps this page up to date.</span> The school will name the
-            person responsible for publishing and removing notices.
-          </PendingNote>
-          <PendingNote>
-            <span className="font-semibold text-navy">Notices for families.</span> Notices will not be sent by text
-            message or email from this site until the school agrees how that will work.
-          </PendingNote>
+          <div className="rounded-2xl bg-card p-8 shadow-sm shadow-navy/5">
+            <h3 className="font-serif text-2xl font-semibold text-navy">Stay updated</h3>
+            <p className="mt-3 text-base leading-[1.7] text-ink-muted">
+              Follow Naalya Schools on social media for real-time updates, or check back here for new notices as they
+              are approved by the school.
+            </p>
+            <Button asChild variant="outline" size="lg" className="mt-4">
+              <a href={SCHOOL.socialUrl} target="_blank" rel="noopener noreferrer">
+                Follow on X
+                <ArrowUpRight aria-hidden />
+                <span className="sr-only">(opens in a new tab)</span>
+              </a>
+            </Button>
+          </div>
+          <div className="rounded-2xl bg-card p-8 shadow-sm shadow-navy/5">
+            <h3 className="font-serif text-2xl font-semibold text-navy">Term dates</h3>
+            <p className="mt-3 text-base leading-[1.7] text-ink-muted">
+              Confirmed term dates for 2026 are published on the academics page. Check there for the full calendar,
+              holiday breaks and reporting dates.
+            </p>
+            <Button asChild variant="outline" size="lg" className="mt-4">
+              <Link href="/academics#calendar">View term dates</Link>
+            </Button>
+          </div>
         </Reveal>
       </div>
     </>
