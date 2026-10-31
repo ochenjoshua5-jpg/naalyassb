@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Placeholder crest. Replace with the approved crest when supplied. -->
-  <circle cx="32" cy="32" r="31" fill="#1B2A4A"/>
-  <circle cx="32" cy="32" r="27" fill="none" stroke="#D4A843" stroke-width="1.5"/>
-  <path d="M19 41a13 13 0 0 1 26 0z" fill="#D4A843"/>
-  <rect x="15" y="44" width="34" height="2.2" rx="1.1" fill="#D4A843"/>
-  <rect x="19" y="48.5" width="26" height="2.2" rx="1.1" fill="#D4A843"/>
-  <rect x="23" y="53" width="18" height="2.2" rx="1.1" fill="#D4A843"/>
-</svg>
