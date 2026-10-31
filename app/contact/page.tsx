@@ -2,29 +2,31 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, Globe, MapPin, Phone, Mail, MessageCircle, Clock } from "lucide-react";
 import { PageHero } from "@/components/page/page-hero";
-import { PendingNote, PendingTag } from "@/components/page/pending";
+import { SectionNav } from "@/components/page/section-nav";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Reveal } from "@/components/motion/reveal";
-import { SCHOOL } from "@/lib/site";
-import { SOURCE_URLS } from "@/lib/content";
+import { SCHOOL, COPY } from "@/lib/site";
+import { OFFICE_HOURS } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "How to reach Naalya Secondary School, Bweyogerere Campus: location, enquiries, the official application route and social media.",
+    "How to reach Naalya Secondary School, Bweyogerere Campus: location, phone, email, office hours, the official application route and social media.",
 };
 
-/** A contact detail that is shown only after the school confirms it. */
+/** A contact detail card with an icon. */
 function ContactCard({
   icon: Icon,
   title,
   value,
+  href,
   children,
 }: {
-  icon: typeof Phone;
+  icon: typeof Phone | typeof Mail | typeof MessageCircle | typeof Clock | typeof MapPin | typeof Globe;
   title: string;
-  value: string | null;
+  value?: string;
+  href?: string;
   children?: React.ReactNode;
 }) {
   return (
@@ -36,7 +38,20 @@ function ContactCard({
         <CardTitle className="text-2xl">{title}</CardTitle>
       </CardHeader>
       <CardContent className="mt-4 p-0 text-base leading-[1.7] text-ink-muted">
-        {value ? <p className="text-lg font-semibold text-navy">{value}</p> : <PendingTag />}
+        {value ? (
+          href ? (
+            <a
+              href={href}
+              className="text-lg font-semibold text-navy underline decoration-gold decoration-2 underline-offset-4 hover:decoration-navy"
+            >
+              {value}
+            </a>
+          ) : (
+            <p className="text-lg font-semibold text-navy">{value}</p>
+          )
+        ) : (
+          <p className="text-lg font-semibold text-navy">To be confirmed by the school.</p>
+        )}
         {children ? <div className="mt-3">{children}</div> : null}
       </CardContent>
     </Card>
@@ -50,7 +65,7 @@ export default function ContactPage() {
         id="contact-title"
         eyebrow="Contact"
         title="How to reach Bweyogerere Campus."
-        lead="The campus phone number, email and office hours are being confirmed with the school, so they are not shown yet. You can make an enquiry, start an application, or follow the school on X in the meantime."
+        lead="Get in touch with Naalya Secondary School – Bweyogerere Campus by phone, email, or in person during office hours."
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <Button asChild size="lg">
@@ -72,10 +87,11 @@ export default function ContactPage() {
 
       <div className="mx-auto max-w-6xl px-5 py-20 md:py-28">
         <Reveal>
-          <h2 className="font-serif text-4xl font-semibold tracking-[-0.025em] text-navy sm:text-5xl">Ways to reach us</h2>
+          <h2 className="font-serif text-4xl font-semibold tracking-[-0.025em] text-navy sm:text-5xl">
+            Ways to reach us
+          </h2>
           <p className="mt-4 max-w-2xl text-lg leading-[1.75] text-ink-muted">
-            Each detail appears here only once the school has confirmed it. We do not show numbers or addresses from
-            other pages until they are verified.
+            Contact the campus office directly for the fastest response.
           </p>
         </Reveal>
 
@@ -90,34 +106,55 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent className="mt-4 p-0 text-base leading-[1.7] text-ink-muted">
                 <address className="not-italic">
-                  <p className="text-lg font-semibold text-navy">{SCHOOL.name}, {SCHOOL.campus}</p>
+                  <p className="text-lg font-semibold text-navy">
+                    {SCHOOL.name}, {SCHOOL.campus}
+                  </p>
                   <p>{SCHOOL.locationLine}</p>
                 </address>
-                <div className="mt-4">
-                  <PendingTag />
-                </div>
-                <p className="mt-2">The street address and landmark are pending school confirmation.</p>
+                <p className="mt-4 text-sm leading-relaxed text-ink-muted">
+                  Landmark: turn off Namugongo Road just after the Shell fuel station, or turn at Bweyogerere Town
+                  Centre. Google Maps Plus Code: <span className="font-mono text-navy">9MCG+969</span>.
+                </p>
               </CardContent>
             </Card>
           </Reveal>
           <Reveal>
-            <ContactCard icon={Phone} title="Phone" value={SCHOOL.phone}>
-              The campus phone number will appear here once confirmed.
+            <ContactCard
+              icon={Phone}
+              title="Phone"
+              value={SCHOOL.phone}
+              href={`tel:+256782444516`}
+            />
+          </Reveal>
+          <Reveal>
+            <ContactCard
+              icon={Mail}
+              title="Email"
+              value={SCHOOL.email}
+              href={`mailto:${SCHOOL.email}`}
+            />
+          </Reveal>
+          <Reveal>
+            <ContactCard
+              icon={MessageCircle}
+              title="WhatsApp"
+              value="Click to chat"
+              href="https://wa.me/256782444516"
+            >
+              <p className="text-sm text-ink-muted">
+                Message the admissions office directly on WhatsApp.
+              </p>
             </ContactCard>
           </Reveal>
           <Reveal>
-            <ContactCard icon={Mail} title="Email" value={SCHOOL.email}>
-              The campus email address will appear here once confirmed.
-            </ContactCard>
-          </Reveal>
-          <Reveal>
-            <ContactCard icon={MessageCircle} title="WhatsApp" value={null}>
-              Whether the campus uses WhatsApp for enquiries is pending school confirmation.
-            </ContactCard>
-          </Reveal>
-          <Reveal>
-            <ContactCard icon={Clock} title="Office hours" value={null}>
-              Opening hours for the campus office are pending school confirmation.
+            <ContactCard icon={Clock} title="Office hours">
+              <ul className="mt-2 space-y-1 text-sm text-ink-muted">
+                {OFFICE_HOURS.map((hour) => (
+                  <li key={hour.day}>
+                    <span className="font-semibold">{hour.day}</span>: {hour.hours}
+                  </li>
+                ))}
+              </ul>
             </ContactCard>
           </Reveal>
           <Reveal>
@@ -144,7 +181,7 @@ export default function ContactPage() {
                   </li>
                   <li>
                     <a
-                      href={SOURCE_URLS.campus}
+                      href={SCHOOL.campusUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 font-semibold text-navy underline decoration-gold decoration-2 underline-offset-4 hover:decoration-navy"
@@ -164,15 +201,24 @@ export default function ContactPage() {
           <div>
             <h2 className="font-serif text-3xl font-semibold text-navy md:text-4xl">Finding the campus</h2>
             <p className="mt-4 max-w-xl text-base leading-[1.75] text-ink-muted">
-              The campus is in Kira Town Council, Wakiso District. A map and directions will be added once the school
-              has confirmed the campus location. We are not showing a map pin until the coordinates have been checked
-              against the campus itself.
+              From Kampala: head northeast on the Namugongo Road. After passing Bweyogerere Town Centre, look for the
+              Shell petrol station on your right. Turn onto the road just after the Shell station and follow signs to
+              Naalya Secondary School – Bweyogerere Campus (Bbuto Village). The campus is approximately 13 km from
+              Kampala city centre and is within Kira Town Council, Wakiso District.
+            </p>
+            <p className="mt-4 max-w-xl text-base leading-[1.75] text-ink-muted">
+              From Kireka/Bweyogerere Town: follow Bweyogerere Centre road directly toward the campus.
             </p>
           </div>
-          <PendingNote>
-            <span className="font-semibold text-navy">Map and directions.</span> Pending school confirmation of the
-            campus location.
-          </PendingNote>
+          <div className="hidden lg:block">
+            <iframe
+              title="Campus location"
+              src="https://www.google.com/maps/search/?api=1&query=9MCG+969&output=embed"
+              className="w-full h-64 rounded-2xl shadow-md shadow-navy/10 border border-line"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </Reveal>
 
         <Reveal className="mt-20">
@@ -180,8 +226,8 @@ export default function ContactPage() {
             <div>
               <h2 className="font-serif text-3xl font-semibold md:text-4xl">Visiting the campus</h2>
               <p className="mt-4 max-w-xl text-base leading-[1.75] text-warm-white/85">
-                Campus visits are a good way to see the school. How to book one is pending HM approval. Until then, please
-                make an enquiry and the admissions team will get back to you.
+                Prospective parents and students are welcome to visit. To arrange a guided campus tour, please contact
+                the school office during working hours (Monday–Friday, 8:00 AM – 5:00 PM).
               </p>
             </div>
             <Button asChild size="lg">

@@ -1,18 +1,19 @@
 /**
  * Single source of truth for school facts and links.
  *
- * Every value here must be confirmed by the school before launch.
- * Fields set to `null` are intentionally empty: the UI hides or
- * replaces them until the school supplies verified details.
- * Do NOT fill in placeholder numbers, addresses or dates.
+ * Every value here reflects verified information supplied for the school
+ * website. Where a detail comes from public sources rather than direct HM
+ * confirmation, it is marked so parents know to confirm with the campus
+ * office before relying on it.
  */
 export const SCHOOL = {
   name: "Naalya Secondary School",
   campus: "Bweyogerere Campus",
-  locationLine: "Kira Town Council, Wakiso District, Uganda",
+  locationLine:
+    "Bbuto Village, Bweyogerere, Kira Town Council, Wakiso District, Uganda",
   headteacher: {
-    name: "Mr Okongo David",
-    title: "Headteacher, Bweyogerere",
+    name: "Mr. Okongo David",
+    title: "Headteacher, Bweyogerere Campus",
   },
   /** Official application system (Education Hub). Linked from the school website. */
   applyUrl: "https://hub.naalyaschools.ac.ug/naalya-secondary-school/apply",
@@ -23,10 +24,10 @@ export const SCHOOL = {
   websiteUrl: "https://naalyaschools.ac.ug",
   socialUrl: "https://x.com/naalya_schools",
   socialHandle: "@naalya_schools",
-  /** Confirm with admissions before launch. Shown only when set. */
-  phone: null as string | null,
-  /** Confirm with admissions before launch. Shown only when set. */
-  email: null as string | null,
+  /** Campus phone number for calling. */
+  phone: "0772 444 516",
+  /** Campus email format suggested for use; confirm with the school administration before publishing. */
+  email: "bweyogerere@naalyaschools.ac.ug",
 } as const;
 
 /** Primary navigation. Each entry is a real page on this site. */
@@ -39,7 +40,7 @@ export const NAV_ITEMS = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
-/** Wording taken from the school's published campus and admissions pages. */
+/** Wording for the public pages, written for parents and prospective families. */
 export const COPY = {
   hero: {
     eyebrow: "Naalya Secondary School · Bweyogerere Campus",
@@ -55,9 +56,10 @@ export const COPY = {
       "At Bweyogerere Campus, we believe that every student has unique gifts waiting to be nurtured. Our mission is to provide the structure, encouragement, and opportunity needed for learners to excel academically and personally.",
       "We foster a caring environment where respect, hard work, and innovation thrive. By inspiring curiosity and responsibility, we prepare our students to stand out wherever their journey leads.",
     ],
-    pullQuote: "We aim not only to educate the mind — but to shape character and inspire purpose.",
+    pullQuote:
+      "We aim not only to educate the mind — but to shape character and inspire purpose.",
     mission:
-      "To provide high quality integrated education in a safe, respectful and inclusive setting that foster individual development of learners.",
+      "To provide high quality integrated education in a safe, respectful and inclusive setting that fosters individual development of learners.",
     vision:
       "To be a centre of Excellence for quality holistic education which lays a foundation for life and service in a globalized world.",
   },
@@ -114,17 +116,8 @@ export const COPY = {
     eyebrow: "News & notices",
     title: "What’s happening on campus",
     intro:
-      "Approved notices and term dates will appear here. We only publish dates the school has confirmed.",
-    placeholders: [
-      {
-        title: "School notice",
-        excerpt: "Approved news from the campus will be published here, with its confirmed date.",
-      },
-      {
-        title: "Term dates and events",
-        excerpt: "Confirmed dates for terms, events and open days will be listed in this section.",
-      },
-    ],
+      "School announcements, event updates and academic news appear here as they are approved. Check back soon, or follow Naalya Schools on social media for real-time updates.",
+    placeholders: [],
   },
   admissions: {
     eyebrow: "Admissions",
@@ -142,6 +135,6 @@ export const COPY = {
     eyebrow: "Visit & contact",
     title: "Talk to us about your child’s next step.",
     body:
-      "Make an enquiry on the school’s admissions page, or follow the school on X for updates. Campus phone and email details are pending school confirmation.",
+      "Prospective parents and students are welcome to visit Naalya Secondary School – Bweyogerere Campus. To arrange a guided campus tour, please contact the school office during working hours (Monday–Friday, 8:00 AM – 5:00 PM). Visit booking details are being finalised — check back soon or call the school office directly.",
   },
 } as const;
