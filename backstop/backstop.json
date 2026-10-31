@@ -1,0 +1,232 @@
+{
+  "id": "naalya_public",
+  "viewports": [
+    {
+      "label": "375",
+      "width": 375,
+      "height": 812
+    },
+    {
+      "label": "768",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "label": "1280",
+      "width": 1280,
+      "height": 800
+    }
+  ],
+  "scenarios": [
+    {
+      "label": "home",
+      "url": "http://127.0.0.1:3000/",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 500,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 0,
+      "selectors": [
+        "document"
+      ],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true,
+      "onReadyScript": "onReady.cjs"
+    },
+    {
+      "label": "about",
+      "url": "http://127.0.0.1:3000/about",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 500,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 0,
+      "selectors": [
+        "document"
+      ],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true,
+      "onReadyScript": "onReady.cjs"
+    },
+    {
+      "label": "academics",
+      "url": "http://127.0.0.1:3000/academics",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 500,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 0,
+      "selectors": [
+        "document"
+      ],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true,
+      "onReadyScript": "onReady.cjs"
+    },
+    {
+      "label": "school-life",
+      "url": "http://127.0.0.1:3000/school-life",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 500,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 0,
+      "selectors": [
+        "document"
+      ],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true,
+      "onReadyScript": "onReady.cjs"
+    },
+    {
+      "label": "news",
+      "url": "http://127.0.0.1:3000/news",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 500,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 0,
+      "selectors": [
+        "document"
+      ],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true,
+      "onReadyScript": "onReady.cjs"
+    },
+    {
+      "label": "admissions",
+      "url": "http://127.0.0.1:3000/admissions",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 500,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 0,
+      "selectors": [
+        "document"
+      ],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true,
+      "onReadyScript": "onReady.cjs"
+    },
+    {
+      "label": "enquiry",
+      "url": "http://127.0.0.1:3000/admissions/enquiry",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 500,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 0,
+      "selectors": [
+        "document"
+      ],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true,
+      "onReadyScript": "onReady.cjs"
+    },
+    {
+      "label": "contact",
+      "url": "http://127.0.0.1:3000/contact",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 500,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 0,
+      "selectors": [
+        "document"
+      ],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true,
+      "onReadyScript": "onReady.cjs"
+    },
+    {
+      "label": "privacy",
+      "url": "http://127.0.0.1:3000/privacy",
+      "referenceUrl": "",
+      "readyEvent": "",
+      "readySelector": "",
+      "delay": 500,
+      "hideSelectors": [],
+      "removeSelectors": [],
+      "hoverSelector": "",
+      "clickSelector": "",
+      "postInteractionWait": 0,
+      "selectors": [
+        "document"
+      ],
+      "selectorExpansion": true,
+      "expect": 0,
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true,
+      "onReadyScript": "onReady.cjs"
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop/bitmaps_reference",
+    "bitmaps_test": "backstop/bitmaps_test",
+    "engine_scripts": "backstop/engine_scripts",
+    "html_report": "backstop/html_report",
+    "ci_report": "backstop/ci_report"
+  },
+  "report": [
+    "browser"
+  ],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": [
+      "--no-sandbox",
+      "--disable-gpu"
+    ]
+  },
+  "asyncCaptureLimit": 4,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}

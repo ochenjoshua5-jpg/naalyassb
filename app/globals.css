@@ -193,3 +193,93 @@
 .palette-item[data-disabled="true"] {
   cursor: not-allowed;
 }
+
+/*
+ * Motion, CSS only (the public site ships no JavaScript animation library).
+ * Everything here is an enhancement: content is fully visible without it, and it is
+ * switched off for visitors who ask for reduced motion.
+ */
+/* Rise only, no fade: text is never at reduced opacity, so its contrast is always what the palette gives. */
+@keyframes reveal-rise {
+  from {
+    transform: translateY(24px);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes sheet-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes underline-in {
+  from {
+    transform: scaleX(0.2);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.btn-lift {
+  transition: transform 0.2s ease-out;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn-lift:hover {
+    transform: scale(1.03);
+  }
+  .btn-lift:active {
+    transform: scale(0.98);
+  }
+  .sheet-panel {
+    animation: sheet-in 0.45s ease-out both;
+  }
+  .nav-underline {
+    animation: underline-in 0.4s ease-out both;
+  }
+  /* Scroll-driven reveal where supported; elsewhere content simply stays visible. */
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 35%;
+    }
+  }
+}
+
+/* Cookie banner (vanilla-cookieconsent) in the school palette, with the gold focus ring. */
+#cc-main {
+  --cc-bg: #1b2a4a;
+  --cc-primary-color: #faf8f5;
+  --cc-secondary-color: #d6dbe6;
+  --cc-btn-primary-bg: #d4a843;
+  --cc-btn-primary-color: #1b2a4a;
+  --cc-btn-primary-border-color: #d4a843;
+  --cc-btn-primary-hover-bg: #e3b95c;
+  --cc-btn-primary-hover-color: #1b2a4a;
+  --cc-btn-primary-hover-border-color: #e3b95c;
+  --cc-btn-secondary-bg: transparent;
+  --cc-btn-secondary-color: #faf8f5;
+  --cc-btn-secondary-border-color: #faf8f5;
+  --cc-link-color: #d4a843;
+  --cc-separator-border-color: #3a4a6a;
+}
+#cc-main :focus-visible {
+  outline: 3px solid #d4a843;
+  outline-offset: 2px;
+}
+/* The library sets width:auto for every modal; give the box layout a real width on phones and desktops. */
+#cc-main .cm.cm--box {
+  width: min(24rem, calc(100vw - 2rem)) !important;
+  max-width: 24rem !important;
+}
+/* Use the site's own font (loaded web font) instead of the library's system-font stack, so the banner renders identically on every device. */
+#cc-main,
+#cc-main * {
+  font-family: inherit !important;
+}

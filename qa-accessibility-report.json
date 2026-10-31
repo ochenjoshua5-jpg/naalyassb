@@ -1,0 +1,171 @@
+{
+  "summary": {
+    "generatedAt": "2026-10-30T09:57:04.259Z",
+    "standard": "WCAG 2.1 AA (axe-core tags: wcag2a, wcag2aa, wcag21a, wcag21aa)",
+    "p0Definition": "violations with impact critical or serious",
+    "p0Count": 0,
+    "totalViolations": 0,
+    "pagesTested": 9,
+    "viewportsTested": [
+      "desktop-1280",
+      "mobile-390"
+    ]
+  },
+  "p0": [],
+  "results": [
+    {
+      "page": "/",
+      "viewport": "desktop-1280",
+      "violations": [],
+      "passes": 22,
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "page": "/about",
+      "viewport": "desktop-1280",
+      "violations": [],
+      "passes": 25,
+      "incomplete": []
+    },
+    {
+      "page": "/academics",
+      "viewport": "desktop-1280",
+      "violations": [],
+      "passes": 27,
+      "incomplete": []
+    },
+    {
+      "page": "/school-life",
+      "viewport": "desktop-1280",
+      "violations": [],
+      "passes": 22,
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "page": "/news",
+      "viewport": "desktop-1280",
+      "violations": [],
+      "passes": 23,
+      "incomplete": []
+    },
+    {
+      "page": "/admissions",
+      "viewport": "desktop-1280",
+      "violations": [],
+      "passes": 24,
+      "incomplete": []
+    },
+    {
+      "page": "/admissions/enquiry",
+      "viewport": "desktop-1280",
+      "violations": [],
+      "passes": 23,
+      "incomplete": []
+    },
+    {
+      "page": "/contact",
+      "viewport": "desktop-1280",
+      "violations": [],
+      "passes": 23,
+      "incomplete": []
+    },
+    {
+      "page": "/privacy",
+      "viewport": "desktop-1280",
+      "violations": [],
+      "passes": 23,
+      "incomplete": []
+    },
+    {
+      "page": "/",
+      "viewport": "mobile-390",
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    {
+      "page": "/about",
+      "viewport": "mobile-390",
+      "violations": [],
+      "passes": 25,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    {
+      "page": "/academics",
+      "viewport": "mobile-390",
+      "violations": [],
+      "passes": 27,
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    {
+      "page": "/school-life",
+      "viewport": "mobile-390",
+      "violations": [],
+      "passes": 23,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    {
+      "page": "/news",
+      "viewport": "mobile-390",
+      "violations": [],
+      "passes": 24,
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    {
+      "page": "/admissions",
+      "viewport": "mobile-390",
+      "violations": [],
+      "passes": 24,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    {
+      "page": "/admissions/enquiry",
+      "viewport": "mobile-390",
+      "violations": [],
+      "passes": 24,
+      "incomplete": [
+        "aria-prohibited-attr"
+      ]
+    },
+    {
+      "page": "/contact",
+      "viewport": "mobile-390",
+      "violations": [],
+      "passes": 24,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    {
+      "page": "/privacy",
+      "viewport": "mobile-390",
+      "violations": [],
+      "passes": 24,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    }
+  ]
+}

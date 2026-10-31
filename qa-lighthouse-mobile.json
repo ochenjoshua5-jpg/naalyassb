@@ -1,0 +1,106 @@
+{
+  "generatedAt": "2026-10-30T10:14:56.481Z",
+  "form": "mobile",
+  "method": "median of 3 runs per page; Lighthouse CI, production build on 127.0.0.1:3000",
+  "pages": {
+    "/": {
+      "runs": 3,
+      "performance": 0.92,
+      "accessibility": 1,
+      "bestPractices": 1,
+      "seo": 1,
+      "lcpMs": 3323.3865,
+      "tbtMs": 58.5,
+      "cls": 0,
+      "transferKB": 371
+    },
+    "/about": {
+      "runs": 3,
+      "performance": 0.93,
+      "accessibility": 1,
+      "bestPractices": 1,
+      "seo": 1,
+      "lcpMs": 3197.229999999999,
+      "tbtMs": 54.5,
+      "cls": 0,
+      "transferKB": 368
+    },
+    "/academics": {
+      "runs": 3,
+      "performance": 0.94,
+      "accessibility": 1,
+      "bestPractices": 1,
+      "seo": 1,
+      "lcpMs": 3017.5150000000003,
+      "tbtMs": 97.99999999999955,
+      "cls": 0,
+      "transferKB": 322
+    },
+    "/admissions": {
+      "runs": 3,
+      "performance": 0.95,
+      "accessibility": 1,
+      "bestPractices": 1,
+      "seo": 1,
+      "lcpMs": 2886.006,
+      "tbtMs": 99,
+      "cls": 0,
+      "transferKB": 322
+    },
+    "/admissions/enquiry": {
+      "runs": 3,
+      "performance": 0.94,
+      "accessibility": 1,
+      "bestPractices": 1,
+      "seo": 0.63,
+      "lcpMs": 3039.6325,
+      "tbtMs": 44.5,
+      "cls": 0,
+      "transferKB": 382
+    },
+    "/contact": {
+      "runs": 3,
+      "performance": 0.95,
+      "accessibility": 1,
+      "bestPractices": 1,
+      "seo": 1,
+      "lcpMs": 2882.619,
+      "tbtMs": 49,
+      "cls": 0,
+      "transferKB": 314
+    },
+    "/news": {
+      "runs": 3,
+      "performance": 0.95,
+      "accessibility": 1,
+      "bestPractices": 1,
+      "seo": 1,
+      "lcpMs": 3003.9695,
+      "tbtMs": 56.5,
+      "cls": 0,
+      "transferKB": 324
+    },
+    "/privacy": {
+      "runs": 3,
+      "performance": 0.95,
+      "accessibility": 1,
+      "bestPractices": 1,
+      "seo": 1,
+      "lcpMs": 2999.2019999999998,
+      "tbtMs": 42.5,
+      "cls": 0,
+      "transferKB": 315
+    },
+    "/school-life": {
+      "runs": 3,
+      "performance": 0.95,
+      "accessibility": 1,
+      "bestPractices": 1,
+      "seo": 1,
+      "lcpMs": 2885.0579999999995,
+      "tbtMs": 55.5,
+      "cls": 0,
+      "transferKB": 317
+    }
+  }
+}

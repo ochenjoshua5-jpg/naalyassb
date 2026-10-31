@@ -47,8 +47,8 @@ export default function NewsPage() {
         {hasItems ? (
           <ul className="mt-14 grid gap-6 md:grid-cols-2">
             {NEWS_ITEMS.map((item) => (
-              <Reveal key={`${item.date}-${item.title}`}>
-                <li className="flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-sm shadow-navy/5">
+              <Reveal as="li" key={`${item.date}-${item.title}`}>
+                <div className="flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-sm shadow-navy/5">
                   <div className="flex flex-col gap-4 p-7 md:p-8">
                     <div className="flex flex-wrap items-center gap-3">
                       <Badge variant="navy">
@@ -61,7 +61,7 @@ export default function NewsPage() {
                     <p className="text-base leading-[1.7] text-ink-muted">{item.excerpt}</p>
                     <p className="text-sm font-semibold text-navy">{item.department}</p>
                   </div>
-                </li>
+                </div>
               </Reveal>
             ))}
           </ul>

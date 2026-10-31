@@ -2,14 +2,13 @@
 
 import * as React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /*
  * Slide-over panel built on Radix Dialog (focus trap, Escape to close,
- * focus returned to the trigger). The slide is a Framer Motion transform,
- * which MotionConfig switches off for users who prefer reduced motion.
+ * focus returned to the trigger). The slide is a CSS animation (.sheet-panel),
+ * switched off for users who prefer reduced motion.
  */
 const Sheet = DialogPrimitive.Root;
 const SheetTrigger = DialogPrimitive.Trigger;
@@ -24,12 +23,9 @@ const SheetContent = React.forwardRef<
   <DialogPrimitive.Portal>
     <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-navy-deep/60" />
     <DialogPrimitive.Content ref={ref} asChild {...props}>
-      <motion.div
-        initial={{ x: "100%" }}
-        animate={{ x: 0 }}
-        transition={{ duration: 0.45, ease: "easeOut" }}
+      <div
         className={cn(
-          "fixed inset-y-0 right-0 z-50 flex h-dvh w-full max-w-sm flex-col bg-navy text-warm-white shadow-2xl shadow-navy-deep/40 outline-none",
+          "sheet-panel fixed inset-y-0 right-0 z-50 flex h-dvh w-full max-w-sm flex-col bg-navy text-warm-white shadow-2xl shadow-navy-deep/40 outline-none",
           className,
         )}
       >
@@ -40,7 +36,7 @@ const SheetContent = React.forwardRef<
           <X aria-hidden />
           <span className="sr-only">{closeLabel}</span>
         </DialogPrimitive.Close>
-      </motion.div>
+      </div>
     </DialogPrimitive.Content>
   </DialogPrimitive.Portal>
 ));

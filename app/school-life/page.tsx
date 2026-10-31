@@ -47,8 +47,8 @@ export default function SchoolLifePage() {
 
             <ul className="mt-12 grid gap-6 sm:grid-cols-2">
               {CO_CURRICULAR.map((activity, index) => (
-                <Reveal key={activity.title} delay={(index % 2) * 0.08}>
-                  <li className="flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-sm shadow-navy/5">
+                <Reveal as="li" key={activity.title}>
+                  <div className="flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-sm shadow-navy/5">
                     <PhotoPlaceholder
                       tone={index % 2 === 0 ? "navy" : "gold"}
                       className="aspect-[4/3] w-full"
@@ -58,7 +58,7 @@ export default function SchoolLifePage() {
                       <h3 className="font-serif text-2xl font-semibold text-navy">{activity.title}</h3>
                       <p className="mt-3 text-base leading-[1.7] text-ink-muted">{activity.body}</p>
                     </div>
-                  </li>
+                  </div>
                 </Reveal>
               ))}
             </ul>
@@ -96,11 +96,11 @@ export default function SchoolLifePage() {
             </Reveal>
             <ul className="mt-12 grid gap-6 md:grid-cols-2">
               {CARE.map((item, index) => (
-                <Reveal key={item.title} delay={(index % 2) * 0.08}>
-                  <li className="h-full rounded-2xl bg-soft-grey p-7">
+                <Reveal as="li" key={item.title}>
+                  <div className="h-full rounded-2xl bg-soft-grey p-7">
                     <h3 className="font-serif text-2xl font-semibold text-navy">{item.title}</h3>
                     <p className="mt-3 text-base leading-[1.7] text-ink-muted">{item.body}</p>
-                  </li>
+                  </div>
                 </Reveal>
               ))}
             </ul>
@@ -114,11 +114,11 @@ export default function SchoolLifePage() {
             </Reveal>
             <ul className="mt-12 grid gap-6 sm:grid-cols-2">
               {FACILITIES.map((facility, index) => (
-                <Reveal key={facility.title} delay={(index % 2) * 0.08}>
-                  <li className="h-full rounded-2xl bg-card p-7 shadow-sm shadow-navy/5">
+                <Reveal as="li" key={facility.title}>
+                  <div className="h-full rounded-2xl bg-card p-7 shadow-sm shadow-navy/5">
                     <h3 className="font-serif text-2xl font-semibold text-navy">{facility.title}</h3>
                     <p className="mt-3 text-base leading-[1.7] text-ink-muted">{facility.body}</p>
-                  </li>
+                  </div>
                 </Reveal>
               ))}
             </ul>

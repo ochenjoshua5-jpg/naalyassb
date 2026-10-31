@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 import { ArrowUpRight, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet";
@@ -31,12 +30,13 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-4 px-5">
-        <Link href="/" className="group flex min-w-0 items-center gap-3 rounded-xl" aria-label={`${SCHOOL.name}, ${SCHOOL.campus}: home`}>
+        <Link href="/" className="group flex min-w-0 items-center gap-3 rounded-xl">
           <Crest className="size-11" tone="gold" />
           <span className="flex min-w-0 flex-col leading-tight">
             <span className="truncate font-serif text-base font-semibold text-warm-white sm:text-lg">{SCHOOL.name}</span>
             <span className="text-xs font-semibold uppercase tracking-[0.16em] text-gold">{SCHOOL.campus}</span>
           </span>
+          <span className="sr-only">, home page</span>
         </Link>
 
         {/* Desktop navigation */}
@@ -50,16 +50,15 @@ export function SiteHeader() {
                     href={item.href}
                     aria-current={isActive ? "location" : undefined}
                     className={cn(
-                      "relative block rounded-lg px-3 py-2 text-[0.95rem] font-medium transition-colors",
+                      "relative flex min-h-11 items-center rounded-lg px-3 py-2 text-[0.95rem] font-medium transition-colors",
                       isActive ? "text-warm-white" : "text-warm-white/80 hover:text-warm-white",
                     )}
                   >
                     {item.label}
                     {isActive ? (
-                      <motion.span
-                        layoutId="nav-underline"
-                        className="absolute inset-x-3 -bottom-1 h-0.5 rounded-full bg-gold"
-                        transition={{ duration: 0.4, ease: "easeOut" }}
+                      <span
+                        aria-hidden
+                        className="nav-underline absolute inset-x-3 -bottom-1 h-0.5 rounded-full bg-gold"
                       />
                     ) : null}
                   </Link>
@@ -71,15 +70,11 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <Button asChild size="default" className="hidden md:inline-flex">
-            <motion.a
-              href={SCHOOL.applyUrl}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-            >
+            <a href={SCHOOL.applyUrl} className="btn-lift">
               Apply now
               <ArrowUpRight aria-hidden />
               <span className="sr-only">(opens the Education Hub)</span>
-            </motion.a>
+            </a>
           </Button>
 
           {/* Mobile and tablet menu */}

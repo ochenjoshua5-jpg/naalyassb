@@ -1,0 +1,713 @@
+{
+  "generatedAt": "2026-10-30T10:15:04.788Z",
+  "widths": [
+    375,
+    390,
+    412,
+    768,
+    1280
+  ],
+  "pages": [
+    {
+      "width": 375,
+      "path": "/",
+      "overflow": 0,
+      "offenders": [],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/home-375.png"
+    },
+    {
+      "width": 375,
+      "path": "/about",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=471"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "About the campus · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 0,
+      "screenshot": "qa-screenshots/about-375.png"
+    },
+    {
+      "width": 375,
+      "path": "/academics",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=471"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Academics · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/academics-375.png"
+    },
+    {
+      "width": 375,
+      "path": "/school-life",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=471"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "School life · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 0,
+      "screenshot": "qa-screenshots/school-life-375.png"
+    },
+    {
+      "width": 375,
+      "path": "/news",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=471"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "News and events · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/news-375.png"
+    },
+    {
+      "width": 375,
+      "path": "/admissions",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=471"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Admissions · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/admissions-375.png"
+    },
+    {
+      "width": 375,
+      "path": "/admissions/enquiry",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=471"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Make an enquiry · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 2,
+      "screenshot": "qa-screenshots/admissions-enquiry-375.png"
+    },
+    {
+      "width": 375,
+      "path": "/contact",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=471"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Contact · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/contact-375.png"
+    },
+    {
+      "width": 375,
+      "path": "/privacy",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=471"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Privacy notice · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/privacy-375.png"
+    },
+    {
+      "width": 390,
+      "path": "/",
+      "overflow": 0,
+      "offenders": [],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/home-390.png"
+    },
+    {
+      "width": 390,
+      "path": "/about",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=486"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "About the campus · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 0,
+      "screenshot": "qa-screenshots/about-390.png"
+    },
+    {
+      "width": 390,
+      "path": "/academics",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=486"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Academics · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/academics-390.png"
+    },
+    {
+      "width": 390,
+      "path": "/school-life",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=486"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "School life · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 0,
+      "screenshot": "qa-screenshots/school-life-390.png"
+    },
+    {
+      "width": 390,
+      "path": "/news",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=486"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "News and events · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/news-390.png"
+    },
+    {
+      "width": 390,
+      "path": "/admissions",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=486"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Admissions · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/admissions-390.png"
+    },
+    {
+      "width": 390,
+      "path": "/admissions/enquiry",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=486"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Make an enquiry · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 2,
+      "screenshot": "qa-screenshots/admissions-enquiry-390.png"
+    },
+    {
+      "width": 390,
+      "path": "/contact",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=486"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Contact · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/contact-390.png"
+    },
+    {
+      "width": 390,
+      "path": "/privacy",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=486"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Privacy notice · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/privacy-390.png"
+    },
+    {
+      "width": 412,
+      "path": "/",
+      "overflow": 0,
+      "offenders": [],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/home-412.png"
+    },
+    {
+      "width": 412,
+      "path": "/about",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=508"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "About the campus · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 0,
+      "screenshot": "qa-screenshots/about-412.png"
+    },
+    {
+      "width": 412,
+      "path": "/academics",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=508"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Academics · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/academics-412.png"
+    },
+    {
+      "width": 412,
+      "path": "/school-life",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=508"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "School life · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 0,
+      "screenshot": "qa-screenshots/school-life-412.png"
+    },
+    {
+      "width": 412,
+      "path": "/news",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=508"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "News and events · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/news-412.png"
+    },
+    {
+      "width": 412,
+      "path": "/admissions",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=508"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Admissions · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/admissions-412.png"
+    },
+    {
+      "width": 412,
+      "path": "/admissions/enquiry",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=508"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Make an enquiry · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 2,
+      "screenshot": "qa-screenshots/admissions-enquiry-412.png"
+    },
+    {
+      "width": 412,
+      "path": "/contact",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=508"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Contact · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/contact-412.png"
+    },
+    {
+      "width": 412,
+      "path": "/privacy",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=508"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Privacy notice · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/privacy-412.png"
+    },
+    {
+      "width": 768,
+      "path": "/",
+      "overflow": 0,
+      "offenders": [],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/home-768.png"
+    },
+    {
+      "width": 768,
+      "path": "/about",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=864"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "About the campus · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 0,
+      "screenshot": "qa-screenshots/about-768.png"
+    },
+    {
+      "width": 768,
+      "path": "/academics",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=864"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Academics · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/academics-768.png"
+    },
+    {
+      "width": 768,
+      "path": "/school-life",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=864"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "School life · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 0,
+      "screenshot": "qa-screenshots/school-life-768.png"
+    },
+    {
+      "width": 768,
+      "path": "/news",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=864"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "News and events · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/news-768.png"
+    },
+    {
+      "width": 768,
+      "path": "/admissions",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=864"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Admissions · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/admissions-768.png"
+    },
+    {
+      "width": 768,
+      "path": "/admissions/enquiry",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=864"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Make an enquiry · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 2,
+      "screenshot": "qa-screenshots/admissions-enquiry-768.png"
+    },
+    {
+      "width": 768,
+      "path": "/contact",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=864"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Contact · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/contact-768.png"
+    },
+    {
+      "width": 768,
+      "path": "/privacy",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=864"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Privacy notice · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/privacy-768.png"
+    },
+    {
+      "width": 1280,
+      "path": "/",
+      "overflow": 0,
+      "offenders": [],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/home-1280.png"
+    },
+    {
+      "width": 1280,
+      "path": "/about",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=1376"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "About the campus · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/about-1280.png"
+    },
+    {
+      "width": 1280,
+      "path": "/academics",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=1376"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Academics · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/academics-1280.png"
+    },
+    {
+      "width": 1280,
+      "path": "/school-life",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=1376"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "School life · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 0,
+      "screenshot": "qa-screenshots/school-life-1280.png"
+    },
+    {
+      "width": 1280,
+      "path": "/news",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=1376"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "News and events · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/news-1280.png"
+    },
+    {
+      "width": 1280,
+      "path": "/admissions",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=1376"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Admissions · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/admissions-1280.png"
+    },
+    {
+      "width": 1280,
+      "path": "/admissions/enquiry",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=1376"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Make an enquiry · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 2,
+      "screenshot": "qa-screenshots/admissions-enquiry-1280.png"
+    },
+    {
+      "width": 1280,
+      "path": "/contact",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=1376"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Contact · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/contact-1280.png"
+    },
+    {
+      "width": 1280,
+      "path": "/privacy",
+      "overflow": 0,
+      "offenders": [
+        "absolute -right-24 -top-24 -z-10 size-[28rem] rounded-full b right=1376"
+      ],
+      "small": [],
+      "smallCount": 0,
+      "broken": [],
+      "imageCount": 0,
+      "title": "Privacy notice · Naalya Secondary School, Bweyogerere Campus",
+      "inlineExempt": 1,
+      "screenshot": "qa-screenshots/privacy-1280.png"
+    }
+  ],
+  "menu": [
+    {
+      "width": 375,
+      "opened": true,
+      "linksInMenu": 8,
+      "closedWithEscape": true,
+      "focusReturnedTo": "Open menu"
+    },
+    {
+      "width": 390,
+      "opened": true,
+      "linksInMenu": 8,
+      "closedWithEscape": true,
+      "focusReturnedTo": "Open menu"
+    },
+    {
+      "width": 412,
+      "opened": true,
+      "linksInMenu": 8,
+      "closedWithEscape": true,
+      "focusReturnedTo": "Open menu"
+    },
+    {
+      "width": 768,
+      "opened": true,
+      "linksInMenu": 8,
+      "closedWithEscape": true,
+      "focusReturnedTo": "Open menu"
+    }
+  ],
+  "failures": [],
+  "summary": {
+    "pagesChecked": 45,
+    "failingPageWidths": 0,
+    "menuChecks": 4
+  }
+}
