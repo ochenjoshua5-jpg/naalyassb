@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/page/page-hero";
+import { PendingNote, PendingTag } from "@/components/page/pending";
 import { SectionNav } from "@/components/page/section-nav";
 import { Reveal } from "@/components/motion/reveal";
 import { RealImage } from "@/components/brand/real-image";
-import { CARE, CO_CURRICULAR, DAILY_ROUTINE, FACILITIES, DAY_STUDENT_ROUTINE } from "@/lib/content";
+import { CARE, CO_CURRICULAR, DAILY_ROUTINE, FACILITIES } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "School life",
@@ -102,8 +103,8 @@ export default function SchoolLifePage() {
                 Clubs and activities
               </h2>
               <p className="mt-4 max-w-2xl text-lg leading-[1.75] text-ink-muted">
-                Co-curricular activities run alongside lessons. Students can explore their interests, build new
-                skills and make lasting friendships.
+                Co-curricular activities run alongside lessons. Students can explore their interests, build new skills and
+                make lasting friendships.
               </p>
             </Reveal>
 
@@ -161,26 +162,21 @@ export default function SchoolLifePage() {
                 A typical day
               </h2>
               <p className="mt-4 max-w-2xl text-lg leading-[1.75] text-ink-muted">
-                The daily routine at Bweyogerere Campus balances academics, meals, sports, prep time and rest.
+                The routine as the school has published it for Bweyogerere Campus.
               </p>
+              <div className="mt-4">
+                <PendingTag />
+              </div>
             </Reveal>
             <Reveal className="mt-12 max-w-2xl">
-              <div className="rounded-2xl bg-card p-6 shadow-sm shadow-navy/5 md:px-8">
-                <p className="text-sm font-semibold text-ink-muted">For boarding students</p>
-                <ol className="divide-y divide-line/80 rounded-xl bg-card px-6 shadow-sm shadow-navy/5 md:px-8 mt-4">
-                  {DAILY_ROUTINE.map((item) => (
-                    <li key={`${item.time}-${item.activity}`} className="grid grid-cols-[6.5rem_1fr] gap-4 py-4 md:grid-cols-[8rem_1fr]">
-                      <span className="font-semibold tabular-nums text-navy">{item.time}</span>
-                      <span className="text-base leading-relaxed text-ink-muted">{item.activity}</span>
-                    </li>
-                  ))}
-                </ol>
-                <p className="mt-6 text-sm font-semibold text-ink-muted">For day students</p>
-                <p className="text-base leading-[1.7] text-ink-muted">
-                  The school day runs {DAY_STUDENT_ROUTINE.start} – {DAY_STUDENT_ROUTINE.end}. Day students should
-                  report no later than {DAY_STUDENT_ROUTINE.assembly} for assembly.
-                </p>
-              </div>
+              <ol className="divide-y divide-line/80 rounded-2xl bg-card px-6 shadow-sm shadow-navy/5 md:px-8">
+                {DAILY_ROUTINE.map((item) => (
+                  <li key={`${item.time}-${item.activity}`} className="grid grid-cols-[6.5rem_1fr] gap-4 py-4 md:grid-cols-[8rem_1fr]">
+                    <span className="font-semibold tabular-nums text-navy">{item.time}</span>
+                    <span className="text-base leading-relaxed text-ink-muted">{item.activity}</span>
+                  </li>
+                ))}
+              </ol>
             </Reveal>
           </section>
 
@@ -220,9 +216,8 @@ export default function SchoolLifePage() {
                   Facilities and meals
                 </h2>
                 <p className="mt-6 max-w-2xl text-lg leading-[1.75] text-ink-muted">
-                  Bweyogerere Campus is well-equipped with facilities that support both academic and extracurricular
-                  activities. From classrooms and science labs to boarding houses and a dining hall, the campus is
-                  designed to help every student thrive.
+                  Modern facilities alongside a balanced approach to academics and activities. Students can be day or
+                  boarding students.
                 </p>
                 <ul className="mt-12 grid gap-6 sm:grid-cols-2">
                   {FACILITIES.map((facility, index) => (
@@ -237,8 +232,14 @@ export default function SchoolLifePage() {
               </Reveal>
             </div>
             <Reveal className="mt-10 grid gap-6 md:grid-cols-2">
-              <CardTransport />
-              <CardMeals />
+              <PendingNote>
+                <span className="font-semibold text-navy">Transport.</span> Whether the school runs transport for day
+                students, the routes and the fees, are pending HM approval.
+              </PendingNote>
+              <PendingNote>
+                <span className="font-semibold text-navy">Meal menus.</span> The dining hall serves balanced meals. The
+                weekly menu and any dietary arrangements will be confirmed by the school before publication.
+              </PendingNote>
             </Reveal>
           </section>
 
@@ -254,6 +255,10 @@ export default function SchoolLifePage() {
                       Campus life in pictures: academics, sports, performing arts, clubs and facilities at
                       Bweyogerere Campus.
                     </p>
+                    <PendingNote className="mt-6">
+                      Photographs published with the school’s approval. Any image showing an identifiable student is
+                      shared with recorded guardian consent.
+                    </PendingNote>
                   </div>
                   <div className="lg:w-2/3">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -273,10 +278,6 @@ export default function SchoolLifePage() {
                     </div>
                   </div>
                 </div>
-                <p className="mt-6 text-base leading-[1.7] text-ink-muted">
-                  Photographs published with the school’s approval. Any image showing an identifiable student is
-                  shared with recorded guardian consent. Consent forms are available from the school office.
-                </p>
               </Reveal>
             </div>
           </section>
@@ -287,61 +288,5 @@ export default function SchoolLifePage() {
         </aside>
       </div>
     </>
-  );
-}
-
-function CardTransport() {
-  return (
-    <div className="h-full rounded-2xl bg-card p-7 shadow-sm shadow-navy/5">
-      <h3 className="font-serif text-2xl font-semibold text-navy">Transport for day students</h3>
-      <p className="mt-3 text-base leading-[1.7] text-ink-muted">
-        Naalya Secondary School – Bweyogerere Campus is accessible from multiple routes within Kira Town Council and
-        Greater Kampala. School transport arrangements for day students, including routes and fees, are being
-        confirmed. Please contact the school office for current transport options.
-      </p>
-      <p className="mt-4 text-base leading-[1.7] text-ink-muted">
-        General directions for day student families:<br />
-        • From Kampala/Ntinda: take the Namugongo Road northeast, alight at or near Bweyogerere Shell Station, then
-        local transport to Bbuto Village.<br />
-        • From Kireka/Bweyogerere Town: follow Bweyogerere Centre road directly toward the campus.
-      </p>
-    </div>
-  );
-}
-
-function CardMeals() {
-  return (
-    <div className="h-full rounded-2xl bg-card p-7 shadow-sm shadow-navy/5">
-      <h3 className="font-serif text-2xl font-semibold text-navy">Meal menus</h3>
-      <p className="mt-3 text-base leading-[1.7] text-ink-muted">
-        The dining hall serves nutritious, balanced meals to support student health and growth.
-      </p>
-      <table className="mt-4 w-full text-left border-collapse text-base leading-[1.7] text-ink-muted">
-        <thead>
-          <tr className="border-b border-line">
-            <th className="py-2 text-left text-sm font-semibold text-navy">Meal</th>
-            <th className="py-2 text-left text-sm font-semibold text-navy">Typical offerings</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr className="border-b border-line/50">
-            <td className="py-2 font-semibold text-navy">Breakfast</td>
-            <td className="py-2">Porridge, bread, eggs (rotating days)</td>
-          </tr>
-          <tr className="border-b border-line/50">
-            <td className="py-2 font-semibold text-navy">Lunch</td>
-            <td className="py-2">Posho (maize meal), beans, rice, vegetable stew, or matoke</td>
-          </tr>
-          <tr className="border-b border-line/50">
-            <td className="py-2 font-semibold text-navy">Dinner</td>
-            <td className="py-2">Rice or posho, beans, groundnut stew, or mixed vegetables</td>
-          </tr>
-        </tbody>
-      </table>
-      <p className="mt-4 text-sm leading-relaxed text-ink-muted">
-        Dietary needs (e.g., medical, religious) should be communicated to the school nurse and bursar at the time of
-        enrolment. The specific menu and dietary accommodation policy are subject to school confirmation.
-      </p>
-    </div>
   );
 }
