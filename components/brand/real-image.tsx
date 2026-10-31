@@ -25,9 +25,7 @@ export function RealImage({
       className={className}
       priority={priority}
       sizes={sizes}
-      fill
-      objectFit="cover"
-      objectPosition="center"
+      fill={false}
     />
   );
 }
