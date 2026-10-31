@@ -45,6 +45,7 @@ export const metadata: Metadata = {
   },
   description: `${SCHOOL.name}, ${SCHOOL.campus}, in ${SCHOOL.locationLine}. O-Level and A-Level education with day and boarding options.`,
   applicationName: `${SCHOOL.name} ${SCHOOL.campus}`,
+  icons: { icon: "/icon.svg" },
   openGraph: {
     title: `${SCHOOL.name}, ${SCHOOL.campus}`,
     description: "Welcome to the place where your child’s story begins.",
