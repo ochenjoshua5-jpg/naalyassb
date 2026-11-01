@@ -5,6 +5,7 @@ import { SectionNav } from "@/components/page/section-nav";
 import { Reveal } from "@/components/motion/reveal";
 import { RealImage } from "@/components/brand/real-image";
 import { CARE, CO_CURRICULAR, DAILY_ROUTINE, FACILITIES } from "@/lib/content";
+import { CHILD_PHOTOS_APPROVED, isPublishable } from "@/lib/photos";
 
 export const metadata: Metadata = {
   title: "School life",
@@ -252,17 +253,18 @@ export default function SchoolLifePage() {
                       Photographs
                     </h2>
                     <p className="mt-4 text-lg leading-[1.75] text-ink-muted">
-                      Campus life in pictures: academics, sports, performing arts, clubs and facilities at
-                      Bweyogerere Campus.
+                      {CHILD_PHOTOS_APPROVED
+                        ? "Campus life in pictures: academics, sports, performing arts, clubs and facilities at Bweyogerere Campus."
+                        : "Views of the Bweyogerere Campus. More pictures of school life will be added once they are approved."}
                     </p>
                     <PendingNote className="mt-6">
                       Photographs published with the school’s approval. Any image showing an identifiable student is
-                      shared with recorded guardian consent.
+                      shared only with recorded guardian consent, and until that consent is recorded no such image is shown.
                     </PendingNote>
                   </div>
                   <div className="lg:w-2/3">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {GALLERY_ITEMS.map((item) => (
+                      {GALLERY_ITEMS.filter((item) => isPublishable(item.src)).map((item) => (
                         <div
                           key={item.src}
                           className="rounded-2xl overflow-hidden shadow-md shadow-navy/10 bg-card border border-line group"

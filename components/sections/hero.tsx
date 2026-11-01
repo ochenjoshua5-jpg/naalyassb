@@ -55,11 +55,11 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="relative md:col-span-5">
+        <div className="relative order-first md:order-none md:col-span-5">
           <RealImage
             src="/images/naalya-school-overview.jpg"
             alt="Wide aerial view of Naalya Secondary School Bweyogerere Campus, showing buildings, green lawns, trees and parking"
-            className="aspect-[4/5] w-full max-w-md rotate-[-1.5deg] rounded-2xl shadow-2xl shadow-navy-deep/40 md:ml-auto md:max-w-none object-cover object-center"
+            className="aspect-[16/10] w-full max-w-md rotate-[-1.5deg] rounded-2xl shadow-2xl shadow-navy-deep/40 md:aspect-[4/5] md:ml-auto md:max-w-none object-cover object-center"
             priority
           />
 
