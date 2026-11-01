@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Reveal } from "@/components/motion/reveal";
 import { RealImage } from "@/components/brand/real-image";
 import { OLEVEL_SUBJECTS } from "@/lib/content";
+import { isPublishable } from "@/lib/photos";
 
 export const metadata: Metadata = {
   title: "Academics",
@@ -54,7 +55,8 @@ export default function AcademicsPage() {
         <div className="min-w-0 space-y-24">
           <SectionNav label="On this page, mobile" items={SECTIONS} className="lg:hidden" />
 
-          {/* Featured classroom image */}
+          {/* Featured classroom image: shown only once its photo is approved (see lib/photos.ts) */}
+          {isPublishable("/images/class-time.jpg") ? (
           <Reveal className="w-full">
             <div className="rounded-2xl overflow-hidden shadow-xl shadow-navy/15">
               <RealImage
@@ -68,6 +70,7 @@ export default function AcademicsPage() {
               </p>
             </div>
           </Reveal>
+          ) : null}
 
           {/* Levels: tabs keep the page short and let parents switch between levels */}
           <section id="levels" aria-labelledby="levels-title" className="scroll-mt-28">

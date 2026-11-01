@@ -3,6 +3,7 @@ import { ArrowRight, BookOpen, GraduationCap, Trees } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { PhotoPlaceholder } from "@/components/brand/photo-placeholder";
 import { RealImage } from "@/components/brand/real-image";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { COPY, SCHOOL } from "@/lib/site";
@@ -14,7 +15,7 @@ const ICONS = {
   campus: Trees,
 } as const;
 
-const PROGRAMME_IMAGES: Record<string, { src: string; alt: string }> = {
+const PROGRAMME_IMAGES: Record<string, { src: string | null; alt: string }> = {
   olevel: {
     src: "/images/class-time.jpg",
     alt: "Students in a classroom at Naalya Secondary School, Bweyogerere Campus, engaged in a lesson",
@@ -23,9 +24,10 @@ const PROGRAMME_IMAGES: Record<string, { src: string; alt: string }> = {
     src: "/images/NAALYA-building.jpg",
     alt: "Naalya Secondary School multi-storey building with palm trees at Bweyogerere Campus",
   },
+  // The aerial photo already leads the hero, so this card uses the placeholder instead of a repeat.
   campus: {
-    src: "/images/naalya-school-overview.jpg",
-    alt: "Wide aerial view of Naalya Secondary School Bweyogerere Campus with green lawns and buildings",
+    src: null,
+    alt: "",
   },
 };
 
@@ -49,11 +51,15 @@ export function Programmes() {
             return (
               <RevealItem key={item.key} className={cn(index === 1 && "md:mt-20")}>
                 <Card className="flex h-full flex-col overflow-hidden border-l-4 border-gold">
-                  <RealImage
-                    src={PROGRAMME_IMAGES[item.key].src}
-                    alt={PROGRAMME_IMAGES[item.key].alt}
-                    className="h-44 w-full rounded-none object-cover object-center"
-                  />
+                  {PROGRAMME_IMAGES[item.key].src ? (
+                    <RealImage
+                      src={PROGRAMME_IMAGES[item.key].src as string}
+                      alt={PROGRAMME_IMAGES[item.key].alt}
+                      className="h-44 w-full rounded-none object-cover object-center"
+                    />
+                  ) : (
+                    <PhotoPlaceholder className="h-44 w-full rounded-none" tone="gold" />
+                  )}
                   <CardHeader className="pb-4">
                     <div className="flex items-center justify-between gap-3">
                       <CardTitle className="text-3xl">{item.title}</CardTitle>

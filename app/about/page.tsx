@@ -162,7 +162,7 @@ export default function AboutPage() {
                 <RealImage
                   src="/images/hm.jpg"
                   alt="Portrait of the headteacher of Naalya Secondary School, Bweyogerere Campus"
-                  className="shrink-0 size-24 rounded-full object-cover object-center"
+                  className="shrink-0 size-32 rounded-full object-cover object-[50%_20%]"
                   priority
                 />
                 <div>

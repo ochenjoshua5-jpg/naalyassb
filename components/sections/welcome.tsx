@@ -32,7 +32,7 @@ export function Welcome() {
           <RealImage
             src="/images/hm.jpg"
             alt="Portrait of the headteacher of Naalya Secondary School, Bweyogerere Campus, in a blue suit and tie"
-            className="aspect-[4/5] w-full rotate-[1.5deg] rounded-2xl shadow-xl shadow-navy/15 object-cover object-center"
+            className="aspect-[4/5] w-full rounded-2xl shadow-xl shadow-navy/15 object-cover object-[50%_30%]"
             priority
           />
           <p className="mt-8 font-serif text-2xl leading-snug text-navy">
