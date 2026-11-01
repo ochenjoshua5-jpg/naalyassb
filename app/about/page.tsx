@@ -9,7 +9,7 @@ import { SectionNav } from "@/components/page/section-nav";
 import { Timeline } from "@/components/page/timeline";
 import { Reveal } from "@/components/motion/reveal";
 import { RealImage } from "@/components/brand/real-image";
-import { CAMPUS_CHAIR, CAMPUS_TEAM, FACILITIES, TIMELINE, VALUES } from "@/lib/content";
+import { CAMPUS_CHAIR, CAMPUS_TEAM, FACILITIES, LEADERSHIP_APPROVED, TIMELINE, VALUES } from "@/lib/content";
 import { COPY, SCHOOL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -138,7 +138,7 @@ export default function AboutPage() {
                 </p>
               </Reveal>
               <dl className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2">
-                {VALUES.map((value, index) => (
+                {VALUES.map((value) => (
                   <Reveal key={value.title} className="border-t-2 border-gold pt-5">
                     <dt className="font-serif text-2xl font-semibold text-navy">{value.title}</dt>
                     <dd className="mt-2 text-base leading-[1.7] text-ink-muted">{value.body}</dd>
@@ -177,22 +177,31 @@ export default function AboutPage() {
               <div className="mt-4 mb-5">
                 <PendingTag />
               </div>
-              <p className="max-w-2xl text-base leading-[1.75] text-ink-muted">
-                These names and roles are taken from the school’s public leadership page. The headteacher will confirm
-                them before this page is published.
-              </p>
-              <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-                {CAMPUS_TEAM.map((person) => (
-                  <li key={person.name} className="rounded-xl bg-soft-grey p-5">
-                    <p className="font-semibold text-navy">{person.name}</p>
-                    <p className="mt-1 text-sm text-ink-muted">{person.role}</p>
-                  </li>
-                ))}
-                <li className="rounded-xl bg-soft-grey p-5 sm:col-span-2">
-                  <p className="font-semibold text-navy">{CAMPUS_CHAIR.name}</p>
-                  <p className="mt-1 text-sm text-ink-muted">{CAMPUS_CHAIR.role}</p>
-                </li>
-              </ul>
+              {LEADERSHIP_APPROVED ? (
+                <>
+                  <p className="max-w-2xl text-base leading-[1.75] text-ink-muted">
+                    These names and roles are taken from the school’s public leadership page. The headteacher will confirm
+                    them before this page is published.
+                  </p>
+                  <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+                    {CAMPUS_TEAM.map((person) => (
+                      <li key={person.name} className="rounded-xl bg-soft-grey p-5">
+                        <p className="font-semibold text-navy">{person.name}</p>
+                        <p className="mt-1 text-sm text-ink-muted">{person.role}</p>
+                      </li>
+                    ))}
+                    <li className="rounded-xl bg-soft-grey p-5 sm:col-span-2">
+                      <p className="font-semibold text-navy">{CAMPUS_CHAIR.name}</p>
+                      <p className="mt-1 text-sm text-ink-muted">{CAMPUS_CHAIR.role}</p>
+                    </li>
+                  </ul>
+                </>
+              ) : (
+                <p className="max-w-2xl text-base leading-[1.75] text-ink-muted">
+                  The names and roles of the campus leadership team will be published once the headteacher has confirmed
+                  them.
+                </p>
+              )}
             </Reveal>
           </section>
 
@@ -222,7 +231,7 @@ export default function AboutPage() {
               </Reveal>
             </div>
             <ul className="mt-12 grid gap-6 sm:grid-cols-2">
-              {FACILITIES.map((facility, index) => (
+              {FACILITIES.map((facility) => (
                 <Reveal as="li" key={facility.title}>
                   <div className="h-full rounded-2xl bg-card p-7 shadow-sm shadow-navy/5">
                     <h3 className="font-serif text-2xl font-semibold text-navy">{facility.title}</h3>
