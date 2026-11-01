@@ -166,7 +166,7 @@ export default function AcademicsPage() {
                 ["Personal attention", "Personalised attention and individual support for each learner."],
                 ["Continuous assessment", "Regular evaluation and feedback that helps learners improve."],
                 ["Experienced teachers", "Educators who are committed to helping each learner reach their academic goals."],
-              ].map(([title, body], index) => (
+              ].map(([title, body]) => (
                 <Reveal as="li" key={title}>
                   <div className="h-full rounded-2xl bg-card p-7 shadow-sm shadow-navy/5">
                     <h3 className="font-serif text-2xl font-semibold text-navy">{title}</h3>

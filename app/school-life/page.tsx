@@ -110,7 +110,7 @@ export default function SchoolLifePage() {
             </Reveal>
 
             <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {CO_CURRICULAR.map((activity, index) => {
+              {CO_CURRICULAR.map((activity) => {
                 const activityImages: Record<string, { src: string; alt: string }> = {
                   "Music and dance": {
                     src: "/images/mdd-dance.jpg",
@@ -188,7 +188,7 @@ export default function SchoolLifePage() {
               </h2>
             </Reveal>
             <ul className="mt-12 grid gap-6 md:grid-cols-2">
-              {CARE.map((item, index) => (
+              {CARE.map((item) => (
                 <Reveal as="li" key={item.title}>
                   <div className="h-full rounded-2xl bg-soft-grey p-7">
                     <h3 className="font-serif text-2xl font-semibold text-navy">{item.title}</h3>
@@ -221,7 +221,7 @@ export default function SchoolLifePage() {
                   boarding students.
                 </p>
                 <ul className="mt-12 grid gap-6 sm:grid-cols-2">
-                  {FACILITIES.map((facility, index) => (
+                  {FACILITIES.map((facility) => (
                     <Reveal as="li" key={facility.title}>
                       <div className="h-full rounded-2xl bg-card p-7 shadow-sm shadow-navy/5">
                         <h3 className="font-serif text-2xl font-semibold text-navy">{facility.title}</h3>

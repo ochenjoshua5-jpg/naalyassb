@@ -4,6 +4,8 @@ Status: **for school review.** Every page is a preview. Nothing here is approved
 
 This file is the fact-check list. Each public statement is matched to its source, its status, and who must confirm it. Update it when the school replies.
 
+For the current list of items the school must supply, see `docs/CONTENT-CHECKLIST.md`.
+
 ## How statuses work
 
 - **Published (school site):** wording taken from the school’s own public pages. Still needs HM sign-off before launch.

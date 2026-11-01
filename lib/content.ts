@@ -72,6 +72,12 @@ export const CAMPUS_TEAM: ReadonlyArray<{ name: string; role: string }> = [
 
 export const CAMPUS_CHAIR = { name: "Dr. Mpoza John Baptist (PhD)", role: "Chairman, Bweyogerere Campus" };
 
+/**
+ * Names and roles of the campus leadership stay hidden until the headteacher confirms them.
+ * Flip to `true` only after that confirmation is recorded.
+ */
+export const LEADERSHIP_APPROVED = false;
+
 export const FACILITIES = [
   {
     title: "Enriched library",
@@ -150,11 +156,11 @@ export const DAILY_ROUTINE: ReadonlyArray<{ time: string; activity: string }> = 
   { time: "6:00 AM", activity: "Breakfast" },
   { time: "6:30 AM", activity: "Morning prayers and assembly" },
   { time: "7:00 AM", activity: "Morning classes" },
-  { time: "10:00 AM", activity: "Breakfast (as published; the school to confirm whether this is a break)" },
+  { time: "10:00 AM", activity: "Breakfast" },
   { time: "10:20 AM", activity: "Classes" },
   { time: "1:00 PM", activity: "Lunch" },
   { time: "2:00 PM", activity: "Classes resume" },
-  { time: "4:40 PM", activity: "Co-curricular activities (published as 4:40; the school to confirm AM or PM)" },
+  { time: "4:40 PM", activity: "Co-curricular activities" },
   { time: "6:00 PM", activity: "Dinner" },
   { time: "7:00 PM", activity: "Evening prep" },
 ];
