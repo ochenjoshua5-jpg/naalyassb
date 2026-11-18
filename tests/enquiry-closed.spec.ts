@@ -8,7 +8,7 @@ import { recordsWithDigits } from "./support/test-store";
  * verified routes must be present.
  */
 
-const HUB_URL = "https://hub.naalyaschools.ac.ug/naalya-secondary-school/apply";
+const HUB_URL = "https://hub.naalyaschools.ac.ug/naalya-secondary-school/apply?ref=SKYU";
 const SCHOOL_ENQUIRY_URL = "https://naalyaschools.ac.ug/admissions";
 
 test.describe("enquiry disabled (public preview)", () => {
@@ -40,6 +40,17 @@ test.describe("enquiry disabled (public preview)", () => {
     await expect(page.locator(`a[href="${HUB_URL}"]`).filter({ visible: true }).first()).toBeVisible();
     await expect(page.locator(`a[href="${SCHOOL_ENQUIRY_URL}"]`).filter({ visible: true }).first()).toBeVisible();
     await expect(page.locator("form")).toHaveCount(0);
+  });
+
+  test("application links across public pages use the requested referral URL", async ({ page }) => {
+    for (const path of ["/", "/admissions", "/about", "/contact", "/admissions/enquiry"]) {
+      await page.goto(path);
+      const links = page.locator('a[href^="https://hub.naalyaschools.ac.ug/naalya-secondary-school/apply"]');
+      expect(await links.count(), `application links on ${path}`).toBeGreaterThan(0);
+      for (const link of await links.all()) await expect(link).toHaveAttribute("href", HUB_URL);
+    }
+    await page.goto("/admissions");
+    await expect(page.getByRole("link", { name: "Start an application on the Education Hub" })).toHaveAttribute("href", HUB_URL);
   });
 
   test("API refuses with 503, returns no reference and stores nothing", async ({ page }) => {

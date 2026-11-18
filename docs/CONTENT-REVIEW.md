@@ -78,7 +78,7 @@ Removed from the brief’s examples: “Bweyogerere Students Shine at National S
 | Statement | Source | Status |
 | --- | --- | --- |
 | Four steps: enquiry, contact, apply online or in person, join | admissions page | Published |
-| Apply through the Education Hub | admissions page (“Start an application”) | Published. The school should confirm the hub is the current route. |
+| Apply through the Education Hub | Headmaster-requested referral link | Published with `ref=SKYU`; live reachability still needs checking. |
 | Students report by 5:00 pm on the date in the admission letter; a place is held for two weeks | admissions FAQ 001 | Published |
 | Discipline guided by respect, punctuality and integrity | campus page | Published |
 | Day and boarding options | campus page | Published |

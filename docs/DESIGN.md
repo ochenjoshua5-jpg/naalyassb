@@ -66,7 +66,7 @@ No stock photos are used. Every image slot is either a **warm colour-block place
 
 - Confirm the palette: navy `#1b2a4a` and gold `#d4a843` as the brand colours, or send the school's own colours.
 - Confirm the Headmaster's welcome text, or supply the wording.
-- Confirm the Education Hub application route (currently `hub.naalyaschools.ac.ug/naalya-secondary-school/apply`).
+- Check the Headmaster-requested Education Hub application link (`https://hub.naalyaschools.ac.ug/naalya-secondary-school/apply?ref=SKYU`) from a normal internet connection.
 - Confirm an official phone number, WhatsApp number and email. Until then, none are shown.
 - Confirm the physical address line shown in the visit section.
 - Provide approved news and term dates, or confirm that the news section stays as a placeholder at launch.

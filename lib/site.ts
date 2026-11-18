@@ -15,7 +15,7 @@ export const SCHOOL = {
     title: "Headteacher, Bweyogerere",
   },
   /** Official application system (Education Hub). Linked from the school website. */
-  applyUrl: "https://hub.naalyaschools.ac.ug/naalya-secondary-school/apply",
+  applyUrl: "https://hub.naalyaschools.ac.ug/naalya-secondary-school/apply?ref=SKYU",
   /** School's own admissions enquiry page. */
   enquiryUrl: "https://naalyaschools.ac.ug/admissions",
   /** Campus page on the existing school website. */

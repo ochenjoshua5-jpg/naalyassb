@@ -73,6 +73,9 @@ export default function AdmissionsPage() {
                     Use the official Education Hub for the Naalya Secondary School application. The hub asks you to fill in
                     the details, submit, and then receive the decision.
                   </p>
+                  <a href={SCHOOL.applyUrl} className="mt-4 inline-block font-semibold text-navy underline decoration-gold decoration-2 underline-offset-4">
+                    Start an application on the Education Hub
+                  </a>
                 </CardContent>
               </Card>
               <Card className="h-full p-7">

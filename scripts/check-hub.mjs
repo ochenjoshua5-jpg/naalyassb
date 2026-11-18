@@ -9,7 +9,7 @@
  * Exit codes: 0 = 2xx final response on the Hub host; 1 = non-2xx response; 2 = unreachable or timeout.
  * Usage: node scripts/check-hub.mjs [url]
  */
-const EXPECTED_URL = "https://hub.naalyaschools.ac.ug/naalya-secondary-school/apply";
+const EXPECTED_URL = "https://hub.naalyaschools.ac.ug/naalya-secondary-school/apply?ref=SKYU";
 const EXPECTED_HOST = "hub.naalyaschools.ac.ug";
 const url = process.argv[2] ?? EXPECTED_URL;
 const TIMEOUT_MS = 10_000;

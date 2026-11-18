@@ -31,6 +31,7 @@ import {
   type EnquiryInput,
 } from "@/lib/enquiry/schema";
 import { cn } from "@/lib/utils";
+import { SCHOOL } from "@/lib/site";
 
 type FormValues = EnquiryInput;
 
@@ -260,9 +261,8 @@ function EnquiryFormBody({ turnstileSiteKey }: { turnstileSiteKey: string | null
             {status.kind === "error" ? (
               <p className="mt-4 text-base">
                 You can also use the{" "}
-                <a className="font-semibold underline underline-offset-4" href="https://hub.naalyaschools.ac.ug/naalya-secondary-school/apply" rel="noopener noreferrer">
+                <a className="font-semibold underline underline-offset-4" href={SCHOOL.applyUrl} rel="noopener noreferrer">
                   Education Hub
-                  <span className="sr-only"> (opens in a new tab)</span>
                 </a>{" "}
                 or the <Link className="font-semibold underline underline-offset-4" href="/admissions">admissions page</Link>.
               </p>
@@ -561,7 +561,7 @@ function EnquiryFormBody({ turnstileSiteKey }: { turnstileSiteKey: string | null
 
         <p className="mt-6 text-sm leading-relaxed text-ink-muted">
           Not ready to send an enquiry?{" "}
-          <a href="https://hub.naalyaschools.ac.ug/naalya-secondary-school/apply" className="font-semibold text-navy underline decoration-gold decoration-2 underline-offset-4" rel="noopener noreferrer">
+          <a href={SCHOOL.applyUrl} className="font-semibold text-navy underline decoration-gold decoration-2 underline-offset-4" rel="noopener noreferrer">
             Start an application on the Education Hub
             <ArrowUpRight aria-hidden className="ml-1 inline size-4" />
           </a>
