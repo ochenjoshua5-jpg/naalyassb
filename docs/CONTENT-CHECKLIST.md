@@ -65,7 +65,7 @@ Confirmed by the school before launch: **yes** / **no**. Owner is the person nam
 | D3 | Admission dates: pending | `lib/content.ts` (`ADMISSION_DATES`) | Dates from the school's confirmed calendar | No |
 | D4 | FAQ answers pending (7): age range, uniform, phones and gadgets, visiting times, parents' or guardians' duties, fees, transport | `lib/content.ts` (`FAQ`, answers are `null`) | One answer per question | No |
 | D5 | Fees: pending the bursar's approval | `lib/content.ts` | Fee structure (only publish once approved) | No |
-| D6 | Application route: the Education Hub link is published | `lib/site.ts` (`applyUrl`) | Confirm the Education Hub is the current route | No |
+| D6 | Application route: the Headmaster-requested Education Hub referral link is published | `lib/site.ts` (`applyUrl`) | Check the link on a normal internet connection | Yes |
 
 ### Contact (`/contact`)
 

@@ -9,7 +9,7 @@ import { recordsWithDigits, setOutage } from "./support/test-store";
  * are simulated with Playwright route interception.
  */
 
-const HUB_URL = "https://hub.naalyaschools.ac.ug/naalya-secondary-school/apply";
+const HUB_URL = "https://hub.naalyaschools.ac.ug/naalya-secondary-school/apply?ref=SKYU";
 
 test.beforeEach(async ({ context }) => {
   await context.setExtraHTTPHeaders({ "x-real-ip": uniqueTestIp() });

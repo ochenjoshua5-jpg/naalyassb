@@ -66,6 +66,9 @@ test.describe("enquiry form, open test mode", () => {
     await expect(page.getByRole("radio", { name: "Next available intake" })).toBeVisible();
     await expect(page.getByRole("checkbox", { name: /I have read the privacy notice/ })).toBeVisible();
     await expect(page.getByRole("button", { name: "Send enquiry" })).toBeEnabled();
+    await expect(page.getByRole("link", { name: /Start an application on the Education Hub/ })).toHaveAttribute(
+      "href", "https://hub.naalyaschools.ac.ug/naalya-secondary-school/apply?ref=SKYU",
+    );
     // Unverified school contact details must not appear (lib/site.ts keeps phone and email null).
     await expect(page.locator('a[href^="tel:"], a[href^="mailto:"]')).toHaveCount(0);
     await expect(page.getByText("+256 772 345 678")).toHaveCount(0);

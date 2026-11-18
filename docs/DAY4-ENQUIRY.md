@@ -23,7 +23,7 @@ So the pipeline is **built behind a flag and tested, and the public preview keep
 
 | Route | Status |
 | --- | --- |
-| Apply Now → Education Hub (`https://hub.naalyaschools.ac.ug/naalya-secondary-school/apply`) | Verified link from the school's admissions page. Not reachable from this sandbox (see §2). |
+| Apply Now → Education Hub (`https://hub.naalyaschools.ac.ug/naalya-secondary-school/apply?ref=SKYU`) | Headmaster-requested referral link. Live reachability needs checking from a normal connection (see §2). |
 | Make an enquiry → school's admissions page (`https://naalyaschools.ac.ug/admissions`) | Existing school route, unchanged. |
 | Custom enquiry form (`/admissions/enquiry`) | Built. Shows the verified fallback while disabled. |
 | Phone and email | Not shown. `lib/site.ts` keeps them `null` until the school confirms them. |
@@ -34,7 +34,7 @@ So the pipeline is **built behind a flag and tested, and the public preview keep
 
 `npm run check:hub` requests the Hub link with a 10-second timeout per attempt. It retries only on 5xx responses (up to 3 attempts). It reports network errors once without retrying, and it checks that the final host is `hub.naalyaschools.ac.ug`. Every attempt is logged as JSON with UTC and EAT timestamps.
 
-Result from this sandbox (outbound access is limited to package registries and GitHub):
+Historical result for the previous URL from this sandbox (outbound access is limited to package registries and GitHub):
 
 ```
 {"event":"hub_check","attempt":1,"status":"no-response","error":"TypeError","elapsed_ms":83}
